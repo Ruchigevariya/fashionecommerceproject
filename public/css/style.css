@@ -582,13 +582,19 @@ ol {
 	left: auto;
 	right: 75px;
 }
-
+.hero__items{
+	background-image: url('../img/hero/hero-1.jpg');
+	position: relative;
+}
+.hero__text{
+	position: absolute;
+}
 .hero__items {
 	height: 800px;
 	padding-top: 230px;
 }
 
-.hero__text h6 {
+.hero__text h5 {
 	color: #e53637;
 	font-size: 14px;
 	font-weight: 700;

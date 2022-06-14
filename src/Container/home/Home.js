@@ -4,14 +4,13 @@ function Home(props) {
     return (
         <div>
             <section className="hero">
-                <div className="hero__slider owl-carousel">
+                <div className="hero__slider">
                     <div className="hero__items set-bg">
-                        <img src='img/hero/hero-1.jpg'/>
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-5 col-lg-7 col-md-8">
                                     <div className="hero__text">
-                                        <h6>Summer Collection</h6>
+                                        <h5>Summer Collection</h5>
                                         <h2>Fall - Winter Collections 2030</h2>
                                         <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                             commitment to exceptional quality.</p>
@@ -27,7 +26,7 @@ function Home(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="hero__items set-bg">
+                    {/* <div className="hero__items set-bg">
                     <img src='img/hero/hero-2.jpg'/>
                         <div className="container">
                             <div className="row">
@@ -48,7 +47,7 @@ function Home(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
