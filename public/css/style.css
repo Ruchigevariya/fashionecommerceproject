@@ -1085,7 +1085,7 @@ ol {
 .product__item__text .rating i {
 	font-size: 14px;
 	color: #b7b7b7;
-	margin-right: -5px;
+	margin-right: -1px;
 }
 
 .product__item__text h5 {
@@ -2090,8 +2090,8 @@ ol {
   Breadcrumb Blog
 -----------------------*/
 
-.breadcrumb-blog {
-	text-align: center;
+.breadcrumb-blog img{
+	/* text-align: center;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -2100,14 +2100,20 @@ ol {
 	align-items: center;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
-	justify-content: center;
+	justify-content: center; */
 	height: 350px;
+	position: relative;
 }
 
-.breadcrumb-blog h2 {
+.title h2{
+	position: absolute;
 	color: #ffffff;
 	font-size: 60px;
 	font-weight: 700;
+	display: inline-block;
+	bottom:170%;
+	left:50%;
+	transform: translate(-50%,-170%);
 }
 
 /*---------------------
@@ -2761,6 +2767,7 @@ ol {
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
+	display: inline-block;
 }
 
 .blog__item__text span {

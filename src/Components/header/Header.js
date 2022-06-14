@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
     return (
@@ -41,19 +42,37 @@ function Header(props) {
                         <div className="col-lg-6 col-md-6">
                             <nav className="header__menu mobile-menu">
                                 <ul>
-                                    <li className="active"><a href="./index.html">Home</a></li>
-                                    <li><a href="./shop.html">Shop</a></li>
+                                    <li className="active">
+                                    <NavLink className="active" to="/">Home</NavLink>
+                                    </li>
+                                    <li>
+                                    <NavLink to="/shop">Shop</NavLink>
+                                    </li>
                                     <li><a href="#">Pages</a>
                                         <ul className="dropdown">
-                                            <li><a href="./about.html">About Us</a></li>
-                                            <li><a href="./shop-details.html">Shop Details</a></li>
-                                            <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                            <li><a href="./checkout.html">Check Out</a></li>
-                                            <li><a href="./blog-details.html">Blog Details</a></li>
+                                            <li>
+                                            <NavLink to="/about">About Us</NavLink>
+                                            </li>
+                                            <li>
+                                            <NavLink to="/shop-details">Shop Details</NavLink>
+                                            </li>
+                                            <li>
+                                            <NavLink to="/shopping-cart">Shopping Cart</NavLink>
+                                            </li>
+                                            <li>
+                                            <NavLink to="/checkout">Check Out</NavLink>
+                                            </li>
+                                            <li>
+                                            <NavLink to="/blog-details">Blog Details</NavLink>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li><a href="./blog.html">Blog</a></li>
-                                    <li><a href="./contact.html">Contacts</a></li>
+                                    <li>
+                                    <NavLink to="/blog">Blog</NavLink>
+                                    </li>
+                                    <li>
+                                    <NavLink to="/contact">Contacts</NavLink>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>

@@ -5,7 +5,8 @@ function Home(props) {
         <div>
             <section className="hero">
                 <div className="hero__slider owl-carousel">
-                    <div className="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+                    <div className="hero__items set-bg">
+                        <img src='img/hero/hero-1.jpg'/>
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-5 col-lg-7 col-md-8">
@@ -104,7 +105,8 @@ function Home(props) {
                     <div className="row product__filter">
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-1.jpg" alt />
                                     <span className="label">New</span>
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
@@ -139,7 +141,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-2.jpg" alt />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -173,7 +176,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item sale">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-3.jpg" alt />
                                     <span className="label">Sale</span>
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
@@ -208,7 +212,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-4.jpg" alt />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -242,7 +247,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-5.jpg" alt />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -276,7 +282,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                             <div className="product__item sale">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-6.jpg" alt />
                                     <span className="label">Sale</span>
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
@@ -311,7 +318,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-7.jpg" alt />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -345,7 +353,8 @@ function Home(props) {
                         </div>
                         <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                             <div className="product__item">
-                                <div className="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
+                                <div className="product__item__pic set-bg">
+                                <img src="img/product/product-8.jpg" alt />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -432,12 +441,24 @@ function Home(props) {
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="instagram__pic">
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-1.jpg" />
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-2.jpg" />
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-3.jpg" />
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-4.jpg" />
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-5.jpg" />
-                                <div className="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-6.jpg" />
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-1.jpg'/>
+                                </div>
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-2.jpg'/>
+                                </div>
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-3.jpg'/>
+                                </div>
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-4.jpg'/>
+                                </div>
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-5.jpg'/>
+                                </div>
+                                <div className="instagram__pic__item set-bg">
+                                    <img src='img/instagram/instagram-6.jpg'/>
+                                </div>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -465,7 +486,9 @@ function Home(props) {
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-sm-6">
                             <div className="blog__item">
-                                <div className="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg" />
+                                <div className="blog__item__pic set-bg">
+                                    <img src="img/blog/blog-1.jpg" alt=''/>
+                                </div>
                                 <div className="blog__item__text">
                                     <span><img src="img/icon/calendar.png" alt /> 16 February 2020</span>
                                     <h5>What Curling Irons Are The Best Ones</h5>
@@ -475,7 +498,9 @@ function Home(props) {
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-6">
                             <div className="blog__item">
-                                <div className="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg" />
+                                <div className="blog__item__pic set-bg">
+                                    <img src="img/blog/blog-2.jpg" alt=''/>
+                                </div>
                                 <div className="blog__item__text">
                                     <span><img src="img/icon/calendar.png" alt /> 21 February 2020</span>
                                     <h5>Eternity Bands Do Last Forever</h5>
@@ -485,7 +510,9 @@ function Home(props) {
                         </div>
                         <div className="col-lg-4 col-md-6 col-sm-6">
                             <div className="blog__item">
-                                <div className="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg" />
+                                <div className="blog__item__pic set-bg">
+                                    <img src="img/blog/blog-3.jpg" alt=''/>
+                                </div>
                                 <div className="blog__item__text">
                                     <span><img src="img/icon/calendar.png" alt /> 28 February 2020</span>
                                     <h5>The Health Benefits Of Sunglasses</h5>
