@@ -43,10 +43,10 @@ function Header(props) {
                             <nav className="header__menu mobile-menu">
                                 <ul>
                                     <li className="active">
-                                    <NavLink className="active" to="/">Home</NavLink>
+                                        <NavLink className="active" to="/">Home</NavLink>
                                     </li>
                                     <li>
-                                    <NavLink to="/shop">Shop</NavLink>
+                                        <NavLink to="/shop">Shop</NavLink>
                                     </li>
                                     <li><a href="#">Pages</a>
                                         <ul className="dropdown">
