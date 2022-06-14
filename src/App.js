@@ -4,7 +4,7 @@ import Footer from './Components/footer/Footer';
 import Header from './Components/header/Header';
 import Home from './Container/home/Home';
 import { Route, Switch } from 'react-router-dom';
-import Shop from './Container/home/shop/Shop';
+import Shop from './Container/shop/Shop';
 import Aboutus from './Container/pages/Aboutus';
 import Shopdetails from './Container/pages/Shopdetails';
 import Shoppingcart from './Container/pages/Shoppingcart';
@@ -28,7 +28,6 @@ function App() {
         <Route path="/blog" exact component={Blog}></Route>
         <Route path="/contact" exact component={Contacts}></Route>
       </Switch>
-      {/* <Home/> */}
       <Footer/>
     </div>
   );

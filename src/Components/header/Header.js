@@ -51,27 +51,27 @@ function Header(props) {
                                     <li><a href="#">Pages</a>
                                         <ul className="dropdown">
                                             <li>
-                                            <NavLink to="/about">About Us</NavLink>
+                                                <NavLink to="/about">About Us</NavLink>
                                             </li>
                                             <li>
-                                            <NavLink to="/shop-details">Shop Details</NavLink>
+                                                <NavLink to="/shop-details">Shop Details</NavLink>
                                             </li>
                                             <li>
-                                            <NavLink to="/shopping-cart">Shopping Cart</NavLink>
+                                                <NavLink to="/shopping-cart">Shopping Cart</NavLink>
                                             </li>
                                             <li>
-                                            <NavLink to="/checkout">Check Out</NavLink>
+                                                <NavLink to="/checkout">Check Out</NavLink>
                                             </li>
                                             <li>
-                                            <NavLink to="/blog-details">Blog Details</NavLink>
+                                                <NavLink to="/blog-details">Blog Details</NavLink>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                    <NavLink to="/blog">Blog</NavLink>
+                                        <NavLink to="/blog">Blog</NavLink>
                                     </li>
                                     <li>
-                                    <NavLink to="/contact">Contacts</NavLink>
+                                        <NavLink to="/contact">Contacts</NavLink>
                                     </li>
                                 </ul>
                             </nav>

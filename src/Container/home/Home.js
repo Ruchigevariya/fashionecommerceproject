@@ -27,7 +27,8 @@ function Home(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="hero__items set-bg" data-setbg="img/hero/hero-2.jpg">
+                    <div className="hero__items set-bg">
+                    <img src='img/hero/hero-2.jpg'/>
                         <div className="container">
                             <div className="row">
                                 <div className="col-xl-5 col-lg-7 col-md-8">
