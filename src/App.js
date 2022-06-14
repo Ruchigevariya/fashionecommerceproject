@@ -19,14 +19,14 @@ function App() {
       <Header/>
       <Switch>
         <Route path={"/"} exact component={Home}></Route>
-        <Route path="/shop" exact component={Shop}></Route>
-        <Route path="/about" exact component={Aboutus}></Route>
-        <Route path="/shop-details" exact component={Shopdetails}></Route>
-        <Route path="/shopping-cart" exact component={Shoppingcart}></Route>
-        <Route path="/checkout" exact component={Checkout}></Route>
-        <Route path="/blog-details" exact component={Blogdetails}></Route>
-        <Route path="/blog" exact component={Blog}></Route>
-        <Route path="/contact" exact component={Contacts}></Route>
+        <Route path={"/shop"} exact component={Shop}></Route>
+        <Route path={"/about"} exact component={Aboutus}></Route>
+        <Route path={"/shop-details"} exact component={Shopdetails}></Route>
+        <Route path={"/shopping-cart"} exact component={Shoppingcart}></Route>
+        <Route path={"/checkout"} exact component={Checkout}></Route>
+        <Route path={"/blog-details"} exact component={Blogdetails}></Route>
+        <Route path={"/blog"} exact component={Blog}></Route>
+        <Route path={"/contact"} exact component={Contacts}></Route>
       </Switch>
       <Footer/>
     </div>

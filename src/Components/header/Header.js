@@ -43,27 +43,27 @@ function Header(props) {
                             <nav className="header__menu mobile-menu">
                                 <ul>
                                     <li className="active">
-                                        <NavLink className="active" to="/">Home</NavLink>
+                                        <NavLink className="active" to={"/"}>Home</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to="/shop">Shop</NavLink>
+                                        <NavLink to={"/shop"}>Shop</NavLink>
                                     </li>
                                     <li><a href="#">Pages</a>
                                         <ul className="dropdown">
                                             <li>
-                                                <NavLink to="/about">About Us</NavLink>
+                                                <NavLink to={"/about"}>About Us</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/shop-details">Shop Details</NavLink>
+                                                <NavLink to={"/shop-details"}>Shop Details</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/shopping-cart">Shopping Cart</NavLink>
+                                                <NavLink to={"/shopping-cart"}>Shopping Cart</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/checkout">Check Out</NavLink>
+                                                <NavLink to={"/checkout"}>Check Out</NavLink>
                                             </li>
                                             <li>
-                                                <NavLink to="/blog-details">Blog Details</NavLink>
+                                                <NavLink to={"/blog-details"}>Blog Details</NavLink>
                                             </li>
                                         </ul>
                                     </li>
