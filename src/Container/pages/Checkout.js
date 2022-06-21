@@ -1,7 +1,46 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import * as yup from 'yup';
+import { Formik, Form, useFormik } from 'formik';
 
 function Checkout(props) {
+
+    let schema = yup.object().shape({
+        firstname: yup.string().required("Enter your First Name."),
+        lastname: yup.string().required("Enter your Last Name."),
+        country: yup.string().required("Enter your Country."),
+        address: yup.string().required("Enter your address."),
+        city: yup.string().required("Enter your city"),
+        state: yup.string().required("Enter your State"),
+        postcode: yup.string().required("eEnter your Postcode"),
+        phone: yup.string().required("Enter the Phone number."),
+        email: yup.string().required("Enter your email id.").email("Enter your valid email id."),
+        accountpassword: yup.string().required("Enter Account password"),
+        ordernotes: yup.string().required("Enter order Notes."),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+          firstname: '',
+          lastname: '',
+          country:'',
+          address:'',
+          city:'',
+          state:'',
+          postcode:'',
+          phone:'',
+          email: '',
+          accountpassword:'',
+          ordernotes:'',
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+          alert(JSON.stringify(values, null, 2));
+        },
+    });
+
+    const {handleChange, errors, handleSubmit, handleBlur, touched} = formik;
+
     return (
         <div>
             <section className="breadcrumb-option">
@@ -24,7 +63,8 @@ function Checkout(props) {
             <section className="checkout spad">
                 <div className="container">
                     <div className="checkout__form">
-                        <form action="#">
+                    <Formik values={formik}>
+                        <Form onSubmit={handleSubmit} action="#">
                             <div className="row">
                                 <div className="col-lg-8 col-md-6">
                                     <h6 className="coupon__code"><span className="icon_tag_alt" /> Have a coupon? <a href="#">Click
@@ -33,49 +73,58 @@ function Checkout(props) {
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="checkout__input">
-                                                <p>Fist Name<span>*</span></p>
-                                                <input type="text" />
+                                                <p>First Name<span>*</span></p>
+                                                <input type="text" name="firstname" onChange={handleChange} onBlur={handleBlur}/>
+                                                <p>{errors.firstname && touched.firstname ? errors.firstname : ''}</p>
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="checkout__input">
                                                 <p>Last Name<span>*</span></p>
-                                                <input type="text" />
+                                                <input type="text" name="lastname" onChange={handleChange} onBlur={handleBlur}/>
+                                                <p>{errors.lastname && touched.lastname ? errors.lastname : ''}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="checkout__input">
                                         <p>Country<span>*</span></p>
-                                        <input type="text" />
+                                        <input type="text" name="country" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.country && touched.country ? errors.country : ''}</p>
                                     </div>
                                     <div className="checkout__input">
                                         <p>Address<span>*</span></p>
-                                        <input type="text" placeholder="Street Address" className="checkout__input__add" />
+                                        <input type="text" name="address" placeholder="Street Address" className="checkout__input__add" onChange={handleChange} onBlur={handleBlur}/>
                                         <input type="text" placeholder="Apartment, suite, unite ect (optinal)" />
+                                        <p>{errors.address && touched.address ? errors.address : ''}</p>
                                     </div>
                                     <div className="checkout__input">
-                                        <p>Town/City<span>*</span></p>
-                                        <input type="text" />
+                                        <p>City/Town<span>*</span></p>
+                                        <input type="text" name="city" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.city && touched.city ? errors.city : ''}</p>
                                     </div>
                                     <div className="checkout__input">
                                         <p>Country/State<span>*</span></p>
-                                        <input type="text" />
+                                        <input type="text" name="state" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.state && touched.state ? errors.state : ''}</p>
                                     </div>
                                     <div className="checkout__input">
                                         <p>Postcode / ZIP<span>*</span></p>
-                                        <input type="text" />
+                                        <input type="text"name="postcode" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.postcode && touched.postcode ? errors.postcode : ''}</p>
                                     </div>
                                     <div className="row">
                                         <div className="col-lg-6">
                                             <div className="checkout__input">
                                                 <p>Phone<span>*</span></p>
-                                                <input type="text" />
+                                                <input type="text" name="phone" maxLength={10} onChange={handleChange} onBlur={handleBlur}/>
+                                                <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
                                             <div className="checkout__input">
                                                 <p>Email<span>*</span></p>
-                                                <input type="text" />
+                                                <input type="text" name="email" onChange={handleChange} onBlur={handleBlur}/>
+                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +139,8 @@ function Checkout(props) {
                                     </div>
                                     <div className="checkout__input">
                                         <p>Account Password<span>*</span></p>
-                                        <input type="text" />
+                                        <input type="text" name="accountpassword" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.accountpassword && touched.accountpassword ? errors.accountpassword : ''}</p>
                                     </div>
                                     <div className="checkout__input__checkbox">
                                         <label htmlFor="diff-acc">
@@ -101,7 +151,8 @@ function Checkout(props) {
                                     </div>
                                     <div className="checkout__input">
                                         <p>Order notes<span>*</span></p>
-                                        <input type="text" placeholder="Notes about your order, e.g. special notes for delivery." />
+                                        <input type="text" name="ordernotes" placeholder="Notes about your order, e.g. special notes for delivery." onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.ordernotes && touched.ordernotes ? errors.ordernotes : ''}</p>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-6">
@@ -145,7 +196,8 @@ function Checkout(props) {
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </Form>
+                    </Formik>
                     </div>
                 </div>
             </section>

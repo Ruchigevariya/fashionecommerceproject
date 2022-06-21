@@ -1,6 +1,29 @@
 import React from 'react';
+import * as yup from 'yup';
+import { Formik, Form, useFormik } from 'formik';
 
 function Contacts(props) {
+
+    let schema = yup.object().shape({
+        name: yup.string().required("please enter your name."),
+        email: yup.string().required("please enter email id.").email("please enter valid email id."),
+        message: yup.string().required("please enter message."),
+    });
+    
+    const formik = useFormik({
+        initialValues: {
+          name: '',
+          email: '',
+          message: '',
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+          alert(JSON.stringify(values, null, 2));
+        },
+      });
+
+      const {handleChange,errors,handleSubmit,handleBlur,touched} = formik;
+
     return (
         <div>
             <div className="map">
@@ -32,20 +55,25 @@ function Contacts(props) {
                         </div>
                         <div className="col-lg-6 col-md-6">
                             <div className="contact__form">
-                                <form action="#">
+                            <Formik values={formik}>
+                                <Form onSubmit={handleSubmit} action="#">
                                     <div className="row">
                                         <div className="col-lg-6">
-                                            <input type="text" placeholder="Name" />
+                                            <input type="text" name="name" placeholder="Name" onChange={handleChange} onBlur={handleBlur}/>
+                                            <p>{errors.name && touched.name ? errors.name : ''}</p>
                                         </div>
                                         <div className="col-lg-6">
-                                            <input type="text" placeholder="Email" />
+                                            <input type="text" name="email" placeholder="Email" onChange={handleChange} onBlur={handleBlur}/>
+                                            <p>{errors.email && touched.email ? errors.email : ''}</p>
                                         </div>
                                         <div className="col-lg-12">
-                                            <textarea placeholder="Message" defaultValue={""} />
+                                            <textarea name="message" placeholder="Message" defaultValue={""} onChange={handleChange} onBlur={handleBlur}/>
+                                            <p>{errors.message && touched.message ? errors.message : ''}</p>
                                             <button type="submit" className="site-btn">Send Message</button>
                                         </div>
                                     </div>
-                                </form>
+                                </Form>
+                            </Formik>
                             </div>
                         </div>
                     </div>
