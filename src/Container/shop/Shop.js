@@ -1,7 +1,56 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import List from '../../Components/List/List';
 
 function Shop(props) {
+
+    const productData = [
+        {
+            id:101,
+            categories:'Men',
+            branding:'LouisVuitton',
+            price:800,
+            size:'XS',
+            colors:'black'
+        },
+        {
+            id:102,
+            categories:'Women',
+            branding:'Chanel',
+            price:1200,
+            size:'S',
+            colors:'pink'
+        },
+        {
+            id:103,
+            categories:'Bags',
+            branding:'Hermes',
+            price:1800,
+            size:'XXL',
+            colors:'blue'
+        },
+        {
+            id:104,
+            categories:'Gucci',
+            branding:'LouisVuitton',
+            price:900,
+            size:'M',
+            colors:'yellow'
+        },
+        {
+            id:105,
+            categories:'Shoes',
+            branding:'LouisVuitton',
+            price:2000,
+            size:'XL',
+            colors:'gray'
+        },
+    ];
+
+    const get = (id) =>{
+        console.log(id);
+    }
+
     return (
         <div>
             <section className="breadcrumb-option">
@@ -19,6 +68,9 @@ function Shop(props) {
                     </div>
                 </div>
             </section>
+
+            // Listing
+            <List data = {productData} getid={get} />
 
             <section className="shop spad">
                 <div className="container">
