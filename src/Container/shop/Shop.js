@@ -47,8 +47,8 @@ function Shop(props) {
         },
     ];
 
-    const get = (id) =>{
-        console.log(id);
+    const getid = (categories) =>{
+        console.log(categories);
     }
 
     return (
@@ -70,7 +70,7 @@ function Shop(props) {
             </section>
 
             {/* listing */}
-            <List data = {productData} getid={get} />
+            <List data = {productData} getidprop={getid} />
 
             <section className="shop spad">
                 <div className="container">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
 
-function List({data , getid}) {
+function List({data , getidprop}) {
     
     return (
         <div>
@@ -21,11 +21,10 @@ function List({data , getid}) {
                                 <CardText>
                                     {p.colors}
                                 </CardText>
-                                <Button onClick={()=>getid(p.id)}>Click</Button>
+                                <Button onClick={()=>getidprop(p.categories)}>Click</Button>
                             </CardBody>
                         </Card>
                     )
-
                 })
             }
         </div>
