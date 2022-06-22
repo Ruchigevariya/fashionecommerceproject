@@ -31,8 +31,8 @@ function Shop(props) {
         },
         {
             id:104,
-            categories:'Gucci',
-            branding:'LouisVuitton',
+            categories:'Kids',
+            branding:'Gucci',
             price:900,
             size:'M',
             colors:'yellow'
@@ -69,7 +69,7 @@ function Shop(props) {
                 </div>
             </section>
 
-            // Listing
+            {/* listing */}
             <List data = {productData} getid={get} />
 
             <section className="shop spad">
