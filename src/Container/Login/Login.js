@@ -37,14 +37,26 @@ function Login(props) {
         }
     }
 
-    let schema = yup.object().shape(schemaObj)
+    let schema = yup.object().shape(schemaObj);
  
+    const handleData = (values) => {
+        console.log(values);
+        let localData = JSON.parse(localStorage.getItem("user"));
+        
+        if(localData === null){
+            localStorage.setItem("user",JSON.stringify([values]))
+        }else{
+            localData.push(values);
+            localStorage.setItem("user",JSON.stringify(localData))
+        }
+    }
 
     const formikObj = useFormik({
         initialValues: initval,
         validationSchema: schema,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            handleData(values);
+            // alert(JSON.stringify(values, null, 2));
         },
         enableReinitialize : true
     });
