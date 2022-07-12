@@ -13,22 +13,24 @@ import Blogdetails from './Container/pages/Blogdetails';
 import Blog from './Container/blog/Blog';
 import Contacts from './Container/Contacts/Contacts';
 import Login from './Container/Login/Login';
+import PublicRoute from './Route/PublicRoute';
+import PrivateRoute from './Route/PrivateRoute';
 
 function App() {
   return (
     <div>
       <Header/>
       <Switch>
-        <Route path={"/"} exact component={Home}></Route>
-        <Route path={"/shop"} exact component={Shop}></Route>
-        <Route path={"/about"} exact component={Aboutus}></Route>
-        <Route path={"/shop-details"} exact component={Shopdetails}></Route>
-        <Route path={"/shopping-cart"} exact component={Shoppingcart}></Route>
-        <Route path={"/checkout"} exact component={Checkout}></Route>
-        <Route path={"/blog-details"} exact component={Blogdetails}></Route>
-        <Route path={"/blog"} exact component={Blog}></Route>
-        <Route path={"/contact"} exact component={Contacts}></Route>
-        <Route path={"/login"} exact component={Login}></Route>
+        <PublicRoute path={"/"} exact component={Home} />
+        <PublicRoute path={"/shop"} exact component={Shop} />
+        <PublicRoute path={"/about"} exact component={Aboutus} />
+        <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
+        <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
+        <PrivateRoute path={"/checkout"} exact component={Checkout} />
+        <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
+        <PublicRoute path={"/blog"} exact component={Blog} />
+        <PublicRoute path={"/contact"} exact component={Contacts} />
+        <PublicRoute path={"/login"}  restricted={true} exact component={Login} />
       </Switch>
       <Footer/>
     </div>
@@ -36,3 +38,4 @@ function App() {
 }
 
 export default App;
+
