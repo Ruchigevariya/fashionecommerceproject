@@ -4,7 +4,7 @@ function Blog(props) {
     return (
         <div>
             <section className="breadcrumb-blog">
-                <img src="img/breadcrumb-bg.jpg" alt=''/>
+                <img src="img/breadcrumb-bg.jpg" alt='' />
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
