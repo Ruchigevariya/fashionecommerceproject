@@ -16,7 +16,6 @@ function Blog(props) {
                 </div>
             </section>
 
-
             <section className="blog spad">
                 <div className="container">
                     <div className="row">
