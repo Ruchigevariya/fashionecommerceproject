@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+
 
 function Search(props) {
     const data = [
@@ -30,6 +30,10 @@ function Search(props) {
         }
 
     ]
+
+    const handlesearch = (val) => {
+        console.log(val);
+    }
     return (
         <div>
             <section className="breadcrumb-option">
@@ -53,6 +57,15 @@ function Search(props) {
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="shopping__cart__table">
+                                <TextFi
+                                    margin="dense"
+                                    name="search"
+                                    label="Medicine search"
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                    onChange={(m) => handlesearch(m.target.value)}
+                                />
                                 <table>
                                     <thead>
                                         <tr>
@@ -66,7 +79,7 @@ function Search(props) {
                                     </thead>
                                     {
                                         data.map((d) => {
-                                            return(
+                                            return (
                                                 <tbody>
                                                     <tr>
                                                         <td>{d.id}</td>
