@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import TextField from '@mui/material/TextField';
 
 function Search(props) {
+    const [filterData, setFilterData] = useState([]);
+
     const data = [
         {
             id: 195,
@@ -33,7 +35,25 @@ function Search(props) {
 
     const handlesearch = (val) => {
         console.log(val);
+
+        let localData = JSON.parse(localStorage.getItem("product"));
+
+        let fData = localData.filter((p) => (
+            p.id.toString().includes(val) ||
+            p.name.toLowerCase().includes(val.toLowerCase()) ||
+            p.category.toLowerCase().includes(val.toLowerCase()) ||
+            p.price.toString().includes(val) ||
+            p.quantity.toString().includes(val) ||
+            p.status.toString().includes(val)
+        ))
+
+        setFilterData(fData)
+
+        console.log(fData);
     }
+
+    let finalData = filterData.length > 0 ? filterData : data 
+
     return (
         <div>
             <section className="breadcrumb-option">
@@ -57,14 +77,14 @@ function Search(props) {
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="shopping__cart__table">
-                                <TextFi
+                                <TextField
                                     margin="dense"
                                     name="search"
-                                    label="Medicine search"
+                                    label="Product search"
                                     type="text"
                                     fullWidth
                                     variant="standard"
-                                    onChange={(m) => handlesearch(m.target.value)}
+                                    onChange={(p) => handlesearch(p.target.value)}
                                 />
                                 <table>
                                     <thead>
@@ -78,7 +98,7 @@ function Search(props) {
                                         </tr>
                                     </thead>
                                     {
-                                        data.map((d) => {
+                                        finalData.map((d) => {
                                             return (
                                                 <tbody>
                                                     <tr>
