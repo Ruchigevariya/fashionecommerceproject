@@ -16,10 +16,12 @@ import Login from './Container/Login/Login';
 import PublicRoute from './Route/PublicRoute';
 import PrivateRoute from './Route/PrivateRoute';
 import Search from './Container/Search/Search';
+import ToggleContext from './Context/ThemeContext';
 
 function App() {
   return (
     <div>
+    <ToggleContext>
       <Header/>
       <Switch>
         <PublicRoute path={"/"} exact component={Home} />
@@ -35,6 +37,7 @@ function App() {
         <PublicRoute path={"/search"} exact component={Search} />
       </Switch>
       <Footer/>
+      </ToggleContext>
     </div>
   );
 }

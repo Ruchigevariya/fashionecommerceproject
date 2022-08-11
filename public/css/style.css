@@ -3892,11 +3892,25 @@ ol {
 }
 
 .light{
-	background-color: #fff;
-	color:#212121;
+	background-color: #fff !important;
+	color:#212121 !important;
 }
 
 .dark{
-	background-color: #212121;
-	color:#fff;
+	background-color: #212121 !important;
+	color:#fff !important;
 }
+
+.light .header__top__left p{
+	color:#212121 !important;
+}
+
+.light .header__top__links a{
+	color:#212121 !important;
+}
+
+.light .header__top__hover span{
+	color:#212121 !important;
+
+}
+

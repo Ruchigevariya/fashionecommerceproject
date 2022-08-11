@@ -9,7 +9,7 @@ function Header(props) {
     return (
         <div>
             <header className="header">
-                <div className="header__top">
+                <div className={`header__top ${value.theme}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 col-md-7">
@@ -18,12 +18,13 @@ function Header(props) {
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-5">
-                            {/* <button onClick={() => value.toggle_theme(value.theme)}>Change theme</button> */}
                                 <div className="header__top__right">
                                     <div className="header__top__links">
+                                    <button onClick={() => value.toggle_theme(value.theme)} className="mx-3">Change theme</button>
                                         <NavLink to={"/login"}>Login</NavLink>
                                         <a href="#">FAQs</a>
                                     </div>
+
                                     <div className="header__top__hover">
                                         <span>Usd <i className="arrow_carrot-down" /></span>
                                         <ul>
