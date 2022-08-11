@@ -3890,3 +3890,13 @@ ol {
 		height: 250px;
 	}
 }
+
+.light{
+	background-color: #fff;
+	color:#212121;
+}
+
+.dark{
+	background-color: #212121;
+	color:#fff;
+}

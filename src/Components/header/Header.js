@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Header(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+
     return (
         <div>
             <header className="header">
@@ -14,6 +18,7 @@ function Header(props) {
                                 </div>
                             </div>
                             <div className="col-lg-6 col-md-5">
+                            {/* <button onClick={() => value.toggle_theme(value.theme)}>Change theme</button> */}
                                 <div className="header__top__right">
                                     <div className="header__top__links">
                                         <NavLink to={"/login"}>Login</NavLink>
