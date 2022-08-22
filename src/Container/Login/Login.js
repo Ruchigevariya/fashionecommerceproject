@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Formik, Form, useFormik } from 'formik';
+import { useDispatch } from 'react-redux' ;
 
 function Login(props) {
     const [usertype, setUserType] = useState('login')
@@ -39,16 +40,20 @@ function Login(props) {
 
     let schema = yup.object().shape(schemaObj);
  
+    const dispatch = useDispatch()
+
     const handleData = (values) => {
         console.log(values);
-        let localData = JSON.parse(localStorage.getItem("user"));
+        // let localData = JSON.parse(localStorage.getItem("user"));
         
-        if(localData === null){
-            localStorage.setItem("user",JSON.stringify([values]))
-        }else{
-            localData.push(values);
-            localStorage.setItem("user",JSON.stringify(localData))
-        }
+        // if(localData === null){
+        //     localStorage.setItem("user",JSON.stringify([values]))
+        // }else{
+        //     localData.push(values);
+        //     localStorage.setItem("user",JSON.stringify(localData))
+        // }
+
+        dispatch(signUpAction(values))
     }
 
     const handleLogin = () => {
