@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
 export const signupApi = (data) => {
@@ -14,12 +14,12 @@ export const signupApi = (data) => {
                 onAuthStateChanged(auth, (user) => {
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
-                           resolve({ payload: "please check your email" });
+                            resolve({ payload: "please check your email" });
                         })
                         .catch((e) => {
-                            reject({ payload : e });
+                            reject({ payload: e });
                         })
-                
+
                 });
             })
             .catch((error) => {
@@ -36,4 +36,34 @@ export const signupApi = (data) => {
             });
     })
 
+}
+
+export const signInApi = (data) => {
+    console.log("signInApi", data);
+
+    return new Promise((resolve, reject) => {
+        signInWithEmailAndPassword(auth, data.email, data.password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+
+                if(user.emailVerified){
+                    console.log("Login sucessfully.");
+                }else{
+                    console.log("first verify email");
+                }
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                if (errorCode.localeCompare("auth/user-not-found") === 0) {
+                    reject({ payload: "email or password is wrong" });
+                } else if(errorCode.localeCompare("auth/wrong-password") === 0){
+                    reject({ payload: "password is wrong" });
+                } else {
+                    reject({ payload: errorCode });
+                }
+            });
+    })
 }

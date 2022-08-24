@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Formik, Form, useFormik } from 'formik';
 import { useDispatch } from 'react-redux' ;
-import { signUpAction } from '../../redux/action/auth.action';
+import { signInAction, signUpAction } from '../../redux/action/auth.action';
 
 function Login(props) {
     const [usertype, setUserType] = useState('login')
@@ -57,8 +57,10 @@ function Login(props) {
         dispatch(signUpAction(values))
     }
 
-    const handleLogin = () => {
-        localStorage.setItem("user",123)
+    const handleLogin = (values) => {
+        // localStorage.setItem("user",123)
+
+        dispatch(signInAction(values))
     }
     
     const formikObj = useFormik({
@@ -66,7 +68,7 @@ function Login(props) {
         validationSchema: schema,
         onSubmit: values => {
             if(usertype === 'login'){
-                handleLogin();
+                handleLogin(values);
             }else{
                 handleData(values);
             }
