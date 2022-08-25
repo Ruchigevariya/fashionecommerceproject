@@ -48,9 +48,9 @@ export const signInApi = (data) => {
                 console.log(user);
 
                 if(user.emailVerified){
-                    console.log("Login sucessfully.");
+                    resolve({payload: "Login sucessfully."});
                 }else{
-                    console.log("first verify email");
+                    reject({payload:"first verify email" });
                 }
             })
             .catch((error) => {
