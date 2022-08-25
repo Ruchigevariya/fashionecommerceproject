@@ -19,29 +19,32 @@ import Search from './Container/Search/Search';
 import ToggleContext from './Context/ThemeContext';
 import { Provider } from 'react-redux';
 import { store } from './redux/Store';
+import { SnackbarProvider } from 'notistack';
 
 function App() {
   return (
     <div>
-      <Provider store={store}>
-        <ToggleContext>
-          <Header />
-          <Switch>
-            <PublicRoute path={"/"} exact component={Home} />
-            <PublicRoute path={"/shop"} exact component={Shop} />
-            <PublicRoute path={"/about"} exact component={Aboutus} />
-            <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
-            <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
-            <PrivateRoute path={"/checkout"} exact component={Checkout} />
-            <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
-            <PublicRoute path={"/blog"} exact component={Blog} />
-            <PublicRoute path={"/contact"} exact component={Contacts} />
-            <PublicRoute path={"/login"} restricted={true} exact component={Login} />
-            <PublicRoute path={"/search"} exact component={Search} />
-          </Switch>
-          <Footer />
-        </ToggleContext>
-      </Provider>
+      <SnackbarProvider maxSnack={3}>
+        <Provider store={store}>
+          <ToggleContext>
+            <Header />
+            <Switch>
+              <PublicRoute path={"/"} exact component={Home} />
+              <PublicRoute path={"/shop"} exact component={Shop} />
+              <PublicRoute path={"/about"} exact component={Aboutus} />
+              <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
+              <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
+              <PrivateRoute path={"/checkout"} exact component={Checkout} />
+              <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
+              <PublicRoute path={"/blog"} exact component={Blog} />
+              <PublicRoute path={"/contact"} exact component={Contacts} />
+              <PublicRoute path={"/login"} restricted={true} exact component={Login} />
+              <PublicRoute path={"/search"} exact component={Search} />
+            </Switch>
+            <Footer />
+          </ToggleContext>
+        </Provider>
+      </SnackbarProvider>
     </div>
   );
 }
