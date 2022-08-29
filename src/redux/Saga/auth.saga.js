@@ -1,6 +1,8 @@
 import { call, put, takeEvery, all } from 'redux-saga/effects'
-import { signInApi, signupApi } from '../../Common/API/auth.api';
+import { signInApi, signOutApi, signupApi } from '../../Common/API/auth.api';
+import { history } from '../../history';
 import { setAlert } from '../action/alert.action';
+import { signedInAlert } from '../action/auth.action';
 import * as ActionTypes from '../ActionTypes';
 
 function* signUp(action) {
@@ -19,7 +21,10 @@ function* signUp(action) {
 function* signIn(action) {
   try{
     const user = yield call(signInApi, action.payload);
-    yield put (setAlert({ text: user.payload, color: "success"}))
+    yield put(signedInAlert(user))
+    history.push("/")
+
+    yield put (setAlert({ text: "Login sucessfully.", color: "success"}))
     console.log(user);
   } catch (e) {
     yield put (setAlert({ text: e.payload, color: "error"}))
@@ -27,6 +32,16 @@ function* signIn(action) {
   }
 }
 
+function* signOut(action) {
+  try{
+    const user = yield call(signOutApi, action.payload);
+    yield put (setAlert({ text: user.payload, color: "success"}))
+    console.log(user);
+  } catch (e) {
+    yield put (setAlert({ text: e.payload, color: "error"}))
+    console.log(e);
+  }
+}
 function* watchSignUp() {
   yield takeEvery(ActionTypes.SIGNUP_USER, signUp);
 }
@@ -35,9 +50,13 @@ function* watchSignIn() {
   yield takeEvery(ActionTypes.SIGNIN_USER, signIn)
 }
 
+function* watchSignOut() {
+  yield takeEvery(ActionTypes.SIGNOUT_USER,signOut)
+}
 export function* authSaga() {
   yield all([
     watchSignUp(),
-    watchSignIn()
+    watchSignIn(),
+    watchSignOut()
   ])
 }
