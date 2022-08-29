@@ -8,7 +8,7 @@ export const signInAction = (data) => (dispatch) => {
     dispatch({type:ActionTypes.SIGNIN_USER, payload :data})
 }
 
-export const signedInAlert = (data) => (dispatch) => {
+export const signedInAction = (data) => (dispatch) => {
     dispatch({type: ActionTypes.SIGNED_USER, payload: data})
 }
 
