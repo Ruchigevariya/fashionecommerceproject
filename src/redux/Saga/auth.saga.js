@@ -1,5 +1,5 @@
 import { call, put, takeEvery, all } from 'redux-saga/effects'
-import { signInApi, signOutApi, signupApi } from '../../Common/API/auth.api';
+import { logOutApi, signInApi, signOutApi, signupApi } from '../../Common/API/auth.api';
 import { history } from '../../history';
 import { setAlert } from '../action/alert.action';
 import { signedInAction, signedInAlert } from '../action/auth.action';
@@ -32,9 +32,9 @@ function* signIn(action) {
   }
 }
 
-function* signOut(action) {
+function* logOut(action) {
   try{
-    const user = yield call(signOutApi);
+    const user = yield call(logOutApi);
     yield put (setAlert({ text: user.payload, color: "success"}))
     console.log(user);
   } catch (e) {
@@ -51,14 +51,14 @@ function* watchSignIn() {
   yield takeEvery(ActionTypes.SIGNIN_USER, signIn)
 }
 
-function* watchSignOut() {
-  yield takeEvery(ActionTypes.SIGNOUT_USER,signOut)
+function* watchLogOut() {
+  yield takeEvery(ActionTypes.LOGOUT_USER,logOut)
 }
 
 export function* authSaga() {
   yield all([
     watchSignUp(),
     watchSignIn(),
-    watchSignOut()
+    watchLogOut()
   ])
 }

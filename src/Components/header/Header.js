@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
-import { signOutAction } from '../../redux/action/auth.action';
+import { logOutAction, signOutAction } from '../../redux/action/auth.action';
 import Alert from '../Alert/Alert';
 
 function Header(props) {
@@ -10,6 +10,10 @@ function Header(props) {
     console.log(value);
 
     const dispatch = useDispatch()
+
+    const handleLogOut = () => {
+        dispatch(logOutAction())
+    }
 
     const auth = useSelector(state => state.auth)
 
@@ -33,7 +37,7 @@ function Header(props) {
                                         auth.user === null ?
                                         <NavLink to={"/login"}>Login</NavLink>
                                         :
-                                        <NavLink to={"/"} onClick = {() => {dispatch(signOutAction()) }}>LogOut</NavLink>
+                                        <NavLink to={"/"} onClick = {() => { handleLogOut() }}>LogOut</NavLink>
                                     }
                                         <a href="#">FAQs</a>
                                     </div>

@@ -68,8 +68,8 @@ export const signInApi = (data) => {
     })
 }
 
-export const signOutApi = () => {
-    console.log("signOutApi");
+export const logOutApi = () => {
+    console.log("logOutApi");
 
     return new Promise((resolve, reject) => {
         signOut(auth) 
@@ -77,7 +77,7 @@ export const signOutApi = () => {
             resolve({ payload: "LogOut successfull"})
         })
         .catch ((error) => {
-            reject({ payload: "Something went wrong"})
+            reject({ payload: error.code})
         })
     })
 }
