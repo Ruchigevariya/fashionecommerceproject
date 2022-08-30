@@ -16,3 +16,7 @@ export const logOutAction = () => (dispatch) => {
     dispatch({type: ActionTypes.LOGOUT_USER})
 }
 
+export const loggedOutAction = () => (dispatch) => {
+    dispatch({type: ActionTypes.LOGGEDOUT_USER})
+}
+
