@@ -33,11 +33,7 @@ function Header(props) {
                                         auth.user === null ?
                                         <NavLink to={"/login"}>Login</NavLink>
                                         :
-                                        auth.user !== '' ?
                                         <NavLink to={"/"} onClick = {() => {dispatch(signOutAction()) }}>LogOut</NavLink>
-                                        :
-                                        <NavLink to={"/login"}>Login</NavLink>
-                                        
                                     }
                                         <a href="#">FAQs</a>
                                     </div>

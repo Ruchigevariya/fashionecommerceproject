@@ -34,7 +34,7 @@ function* signIn(action) {
 
 function* signOut(action) {
   try{
-    const user = yield call(signOutApi, action.payload);
+    const user = yield call(signOutApi);
     yield put (setAlert({ text: user.payload, color: "success"}))
     console.log(user);
   } catch (e) {
@@ -42,6 +42,7 @@ function* signOut(action) {
     console.log(e);
   }
 }
+
 function* watchSignUp() {
   yield takeEvery(ActionTypes.SIGNUP_USER, signUp);
 }
@@ -53,6 +54,7 @@ function* watchSignIn() {
 function* watchSignOut() {
   yield takeEvery(ActionTypes.SIGNOUT_USER,signOut)
 }
+
 export function* authSaga() {
   yield all([
     watchSignUp(),
