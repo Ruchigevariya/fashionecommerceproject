@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Formik, Form, useFormik } from 'formik';
-import { useDispatch } from 'react-redux' ;
-import { signInAction, signUpAction } from '../../redux/action/auth.action';
+import { useDispatch } from 'react-redux';
+import { googleSignInAction, GoogleSignInAction, signInAction, signUpAction } from '../../redux/action/auth.action';
 
 function Login(props) {
     const [usertype, setUserType] = useState('login')
     const [reset, setReset] = useState('false')
 
-    let schemaObj,initval;
+    let schemaObj, initval;
 
-    if(reset === 'true'){
+    if (reset === 'true') {
         schemaObj = {
             email: yup.string().required("please enter email id").email("please enter valid email id"),
         }
         initval = {
             email: '',
         }
-    }else if(usertype === 'login'){
+    } else if (usertype === 'login') {
         schemaObj = {
             email: yup.string().required("please enter email id").email("please enter valid email id"),
             password: yup.string().required("please enter password"),
@@ -26,7 +26,7 @@ function Login(props) {
             email: '',
             password: '',
         }
-    }else if(usertype === 'signup'){
+    } else if (usertype === 'signup') {
         schemaObj = {
             name: yup.string().required("please enter name"),
             email: yup.string().required("please enter email id").email("please enter valid email id"),
@@ -40,13 +40,13 @@ function Login(props) {
     }
 
     let schema = yup.object().shape(schemaObj);
- 
+
     const dispatch = useDispatch()
 
     const handleData = (values) => {
         console.log(values);
         // let localData = JSON.parse(localStorage.getItem("user"));
-        
+
         // if(localData === null){
         //     localStorage.setItem("user",JSON.stringify([values]))
         // }else{
@@ -62,22 +62,26 @@ function Login(props) {
 
         dispatch(signInAction(values))
     }
-    
+
+    const handleGoogleSignIn = () => {
+        dispatch(googleSignInAction())
+    }
+
     const formikObj = useFormik({
         initialValues: initval,
         validationSchema: schema,
         onSubmit: values => {
-            if(usertype === 'login'){
+            if (usertype === 'login') {
                 handleLogin(values);
-            }else{
+            } else {
                 handleData(values);
             }
             // alert(JSON.stringify(values, null, 2));
         },
-        enableReinitialize : true
+        enableReinitialize: true
     });
 
-    const {handleChange,errors,handleSubmit,handleBlur,touched} = formikObj;
+    const { handleChange, errors, handleSubmit, handleBlur, touched } = formikObj;
 
     return (
         <div>
@@ -124,7 +128,7 @@ function Login(props) {
                                     <div className='row'>
                                         <div className="col-md-4 form-group mt-3 mt-md-0">
                                             <input type="password" className="form-control" name="password" id="password" placeholder="Your password" onChange={handleChange} onBlur={handleBlur} />
-                                            <p>{errors.password && touched.password ? errors.password : ''}</p>   
+                                            <p>{errors.password && touched.password ? errors.password : ''}</p>
                                         </div>
                                     </div>
                             }
@@ -139,6 +143,18 @@ function Login(props) {
                                         <div className="text-center"><button type="submit">Signup</button></div>
                             }
 
+                            {
+                                reset === 'true' ?
+                                    null
+                                    :
+                                    usertype === 'login' ?
+                                        <div className='row mt-3'>
+                                            <p>OR</p>
+                                            <div className="text-center mt-3"><button type="submit" onClick={() => {handleGoogleSignIn()}}>signIn Google</button></div>
+                                        </div>
+                                    :
+                                    null
+                            }
                             {
                                 usertype === 'login' ?
                                     <div className="text-center mt-3 mb-3">create a new account <a onClick={() => { setReset('false'); setUserType('signup') }}>signup</a></div>

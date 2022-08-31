@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 
 export const signupApi = (data) => {
@@ -47,10 +47,10 @@ export const signInApi = (data) => {
                 const user = userCredential.user;
                 console.log(user);
 
-                if(user.emailVerified){
-                    resolve({payload: user});
-                }else{
-                    reject({payload:"first verify email" });
+                if (user.emailVerified) {
+                    resolve({ payload: user });
+                } else {
+                    reject({ payload: "first verify email" });
                 }
             })
             .catch((error) => {
@@ -59,7 +59,7 @@ export const signInApi = (data) => {
 
                 if (errorCode.localeCompare("auth/user-not-found") === 0) {
                     reject({ payload: "email or password is wrong" });
-                } else if(errorCode.localeCompare("auth/wrong-password") === 0){
+                } else if (errorCode.localeCompare("auth/wrong-password") === 0) {
                     reject({ payload: "password is wrong" });
                 } else {
                     reject({ payload: errorCode });
@@ -68,16 +68,36 @@ export const signInApi = (data) => {
     })
 }
 
+export const googleSignInApi = () => {
+    console.log("googleSignInApi");
+
+    return new Promise((resolve, reject) => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
+                resolve({payload: user})
+            }).catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                reject({payload: error})
+            });
+    })
+}
 export const logOutApi = () => {
     console.log("logOutApi");
 
     return new Promise((resolve, reject) => {
-        signOut(auth) 
-        .then(() => {
-            resolve({ payload: "LogOut successfull"})
-        })
-        .catch ((error) => {
-            reject({ payload: error.code})
-        })
+        signOut(auth)
+            .then(() => {
+                resolve({ payload: "LogOut successfull" })
+            })
+            .catch((error) => {
+                reject({ payload: error.code })
+            })
     })
 }

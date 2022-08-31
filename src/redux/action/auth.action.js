@@ -12,6 +12,10 @@ export const signedInAction = (data) => (dispatch) => {
     dispatch({type: ActionTypes.SIGNED_USER, payload: data})
 }
 
+export const googleSignInAction = () => (dispatch) => {
+    dispatch({type: ActionTypes.GOOGLESIGNIN_USER})
+}
+
 export const logOutAction = () => (dispatch) => {
     dispatch({type: ActionTypes.LOGOUT_USER})
 }
