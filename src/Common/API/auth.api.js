@@ -104,7 +104,7 @@ export const logOutApi = () => {
 }
 
 export const forgotPasswordApi = (data) => {
-    console.log("forgotPasswordApi");
+    console.log("forgotPasswordApi",data);
 
     return new Promise((resolve, reject) => {
         sendPasswordResetEmail(auth, data.email)
