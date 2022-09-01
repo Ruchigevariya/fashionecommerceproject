@@ -76,7 +76,7 @@ function Login(props) {
             } else if(usertype === 'login' && reset === 'false'){
                 handleData(values);
             } else{
-                dispatch(forgotPasswordAction())
+                dispatch(forgotPasswordAction(values))
             }
             // alert(JSON.stringify(values, null, 2));
         },
