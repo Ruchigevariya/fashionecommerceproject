@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Formik, Form, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { googleSignInAction, GoogleSignInAction, signInAction, signUpAction } from '../../redux/action/auth.action';
+import { forgotPaawordAction, forgotPasswordAction, googleSignInAction, GoogleSignInAction, signInAction, signUpAction } from '../../redux/action/auth.action';
 
 function Login(props) {
     const [usertype, setUserType] = useState('login')
@@ -71,10 +71,12 @@ function Login(props) {
         initialValues: initval,
         validationSchema: schema,
         onSubmit: values => {
-            if (usertype === 'login') {
+            if (usertype === 'login' && reset === 'false') {
                 handleLogin(values);
-            } else {
+            } else if(usertype === 'login' && reset === 'false'){
                 handleData(values);
+            } else{
+                dispatch(forgotPasswordAction())
             }
             // alert(JSON.stringify(values, null, 2));
         },

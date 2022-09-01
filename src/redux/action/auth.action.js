@@ -24,3 +24,7 @@ export const loggedOutAction = () => (dispatch) => {
     dispatch({type: ActionTypes.LOGGEDOUT_USER})
 }
 
+export const forgotPasswordAction = (data) => (dispatch) => {
+    dispatch({type: ActionTypes.FORGOTPASSWORD_USER, payload: data})
+}
+
