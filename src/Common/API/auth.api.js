@@ -98,7 +98,7 @@ export const logOutApi = () => {
                 resolve({ payload: "LogOut successfull" })
             })
             .catch((error) => {
-                reject({ payload: error.code })
+                reject({ payload: error })
             })
     })
 }
@@ -114,7 +114,7 @@ export const forgotPasswordApi = (data) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            reject({payload: error.code});
+            reject({payload: errorCode});
         })
     })
 }
