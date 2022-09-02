@@ -68,7 +68,7 @@ function* watchSignIn() {
 }
 
 function* watchGoogleSignIn() {
-  yield takeEvery(ActionTypes.SIGNIN_USER, googleSignIn)
+  yield takeEvery(ActionTypes.GOOGLESIGNIN_USER, googleSignIn)
 }
 
 function* watchLogOut() {
