@@ -62,7 +62,7 @@ function* logOut(action) {
 function* forgotPassword(action) {
   try{
     const user = yield call(forgotPasswordApi, action.payload);
-    yield put(loggedOutAction(user))
+    yield put(signedInAction(user))
     history.push("/")
     yield put (setAlert({ text: user.payload, color: "success"}))
     console.log(user);
