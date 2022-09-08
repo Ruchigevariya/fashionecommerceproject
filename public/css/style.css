@@ -2800,7 +2800,7 @@ ol {
 }
 
 .blog__item__text h5 {
-	color: #0d0d0d;
+	color: #0d0d0d !important;
 	font-weight: 700;
 	line-height: 28px;
 	margin-bottom: 10px;
@@ -3900,17 +3900,67 @@ ol {
 	background-color: #212121 !important;
 	color:#fff !important;
 }
+/* .dark .header{
+	background-color: #212121 !important;
+} */
+.dark .header__top{
+	background-color: #fff !important;
+}
 
-.light .header__top__left p{
+.dark .header__top__left p{
+	color: #212121  !important;
+}
+
+.dark .header__top__links a{
 	color:#212121 !important;
+}
+
+.dark .header__top__hover span{
+	color:#212121 !important;
+}
+
+.dark .header__menu ul li a, .banner__item__text h2, a{
+	color:#fff !important;
 }
 
 .light .header__top__links a{
+	color:#fff !important;
+}
+
+.light .header__menu ul li a, .banner__item__text h2, a{
 	color:#212121 !important;
 }
 
-.light .header__top__hover span{
-	color:#212121 !important;
+.dark .banner__item__text a:after{
+	color:#fff !important;
+}
 
+.dark .filter__controls li.active{
+	color: #fff !important;
+}
+
+.dark .product__item__text h6, h5{
+	color:#fff !important;
+}
+
+.dark .section-title h2{
+	color:#fff !important;
+}
+
+.dark .instagram__text h2, p{
+	color: #fff !important;
+}
+
+.dark .categories__deal__countdown h2{
+	color: #fff !important;
+}
+
+.dark .primary-btn{
+	background-color: #fff !important;
+	color: #212121 !important;
+}
+
+.dark .categories__deal__countdown .categories__deal__countdown__timer .cd-item span{
+	color:#fff !important;
 }
 
