@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Shop(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+    
     return (
         <div>
             <section className="breadcrumb-option">
@@ -20,7 +24,7 @@ function Shop(props) {
                 </div>
             </section>
 
-            <section className="shop spad">
+            <section className={`shop spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">

@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Home(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+
     return (
         <div>
             <section className="hero">
@@ -51,7 +55,7 @@ function Home(props) {
                 </div>
             </section>
 
-            <section className="banner spad">
+            <section className={`banner spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-7 offset-lg-4">
@@ -91,7 +95,7 @@ function Home(props) {
                 </div>
             </section>
 
-            <section className="product spad">
+            <section className={`product spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -390,7 +394,7 @@ function Home(props) {
                 </div>
             </section>
 
-            <section className="categories spad">
+            <section className={`categories spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
@@ -436,7 +440,7 @@ function Home(props) {
                 </div>
             </section>
 
-            <section className="instagram spad">
+            <section className={`instagram spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">
@@ -473,7 +477,7 @@ function Home(props) {
                 </div>
             </section>
 
-            <section className="latest spad">
+            <section className={`latest spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
