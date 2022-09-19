@@ -15,6 +15,7 @@ import Contacts from './Container/Contacts/Contacts';
 import Login from './Container/Login/Login';
 import PublicRoute from './Route/PublicRoute';
 import PrivateRoute from './Route/PrivateRoute';
+import Cart from './Container/Cart/Cart';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <PublicRoute path={"/blog"} exact component={Blog} />
         <PublicRoute path={"/contact"} exact component={Contacts} />
         <PublicRoute path={"/login"}  restricted={true} exact component={Login} />
+        <PublicRoute path={"/cart"} exact component={Cart} />
       </Switch>
       <Footer/>
     </div>
