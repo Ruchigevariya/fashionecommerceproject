@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Aboutus(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+
     return (
         <div>
             <section className="breadcrumb-option">
@@ -20,7 +24,7 @@ function Aboutus(props) {
                 </div>
             </section>
 
-            <section className="about spad">
+            <section className={`about spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -55,7 +59,7 @@ function Aboutus(props) {
                 </div>
             </section>
 
-            <section className="testimonial">
+            <section className={`testimonial ${value.theme}`}>
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-6 p-0">
@@ -84,7 +88,7 @@ function Aboutus(props) {
                 </div>
             </section>
 
-            <section className="counter spad">
+            <section className={`counter spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-md-6 col-sm-6">
@@ -124,7 +128,7 @@ function Aboutus(props) {
                 </div>
             </section>
 
-            <section className="team spad">
+            <section className={`team spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -167,7 +171,7 @@ function Aboutus(props) {
                 </div>
             </section>
 
-            <section className="clients spad">
+            <section className={`clients spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
