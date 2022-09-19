@@ -80,7 +80,7 @@ function Header(props) {
                             <div className="header__nav__option">
                                 <a href="#" className="search-switch"><img src="img/icon/search.png" alt /></a>
                                 <a href="#"><img src="img/icon/heart.png" alt /></a>
-                                <NavLink to={"/cart"}><img src="img/icon/cart.png" alt /> <span>0</span></NavLink>
+                                <NavLink to="/cart"><img src="img/icon/cart.png" alt /><span>0</span></NavLink>
                                 <div className="price">$0.00</div>
                             </div>
                         </div>
