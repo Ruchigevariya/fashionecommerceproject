@@ -13,6 +13,7 @@ import Blogdetails from './Container/pages/Blogdetails';
 import Blog from './Container/blog/Blog';
 import Contacts from './Container/Contacts/Contacts';
 import Login from './Container/Login/Login';
+import Cart from './Container/Cart/Cart';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path={"/blog"} exact component={Blog}></Route>
         <Route path={"/contact"} exact component={Contacts}></Route>
         <Route path={"/login"} exact component={Login}></Route>
+        <Route path={"/cart"} exact component={Cart}></Route>
       </Switch>
       <Footer/>
     </div>
