@@ -12,7 +12,7 @@ function Checkout(props) {
         address: yup.string().required("Enter your address."),
         city: yup.string().required("Enter your city"),
         state: yup.string().required("Enter your State"),
-        postcode: yup.string().required("eEnter your Postcode"),
+        postcode: yup.string().required("Enter your Postcode"),
         phone: yup.string().required("Enter the Phone number."),
         email: yup.string().required("Enter your email id.").email("Enter your valid email id."),
         accountpassword: yup.string().required("Enter Account password"),
