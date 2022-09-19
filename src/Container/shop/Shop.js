@@ -1,56 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import List from '../../Components/List/List';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Shop(props) {
-
-    const productData = [
-        {
-            id:101,
-            categories:'Men',
-            branding:'LouisVuitton',
-            price:800,
-            size:'XS',
-            colors:'black'
-        },
-        {
-            id:102,
-            categories:'Women',
-            branding:'Chanel',
-            price:1200,
-            size:'S',
-            colors:'pink'
-        },
-        {
-            id:103,
-            categories:'Bags',
-            branding:'Hermes',
-            price:1800,
-            size:'XXL',
-            colors:'blue'
-        },
-        {
-            id:104,
-            categories:'Kids',
-            branding:'Gucci',
-            price:900,
-            size:'M',
-            colors:'yellow'
-        },
-        {
-            id:105,
-            categories:'Shoes',
-            branding:'LouisVuitton',
-            price:2000,
-            size:'XL',
-            colors:'gray'
-        },
-    ];
-
-    const getid = (categories) =>{
-        console.log(categories);
-    }
-
+    const value = useContext(themeContext);
+    console.log(value);
+    
     return (
         <div>
             <section className="breadcrumb-option">
@@ -69,10 +24,7 @@ function Shop(props) {
                 </div>
             </section>
 
-            {/* listing */}
-            <List data = {productData} getidprop={getid} />
-
-            <section className="shop spad">
+            <section className={`shop spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3">
