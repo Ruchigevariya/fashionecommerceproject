@@ -1,60 +1,10 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+
 function Blog(props) {
-
-    const data = [
-        {
-            id: 195,
-            name: "Tops",
-            category: "industry",
-            price: "500",
-            quantity: "1",
-            status: "1"
-        },
-        {
-            id: 462,
-            name: "Pants",
-            category: "firm",
-            price: "699",
-            quantity: "1",
-            status: "1"
-        },
-        {
-            id: 740,
-            name: "Shirts",
-            category: "industry",
-            price: "999",
-            quantity: "1",
-            status: "1"
-        }
-
-    ]
-
     return (
         <div>
-            {
-                data.map((d, i) => {
-                    return (
-                        <Card key={i}>
-                            <CardBody>
-                                <CardTitle tag="h5">
-                                    {d.name}
-                                </CardTitle>
-                                <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6">
-                                    {d.category}
-                                </CardSubtitle>
-                                <CardText>
-                                    {d.price}
-                                </CardText>
-                            </CardBody>
-                        </Card>
-                    )
-                })
-            }
             <section className="breadcrumb-blog">
-                <img src="img/breadcrumb-bg.jpg" alt='' />
+                <img src="img/breadcrumb-bg.jpg" alt=''/>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -65,6 +15,7 @@ function Blog(props) {
                     </div>
                 </div>
             </section>
+
 
             <section className="blog spad">
                 <div className="container">
