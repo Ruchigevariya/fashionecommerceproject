@@ -8,8 +8,8 @@ function Header(props) {
 
     return (
         <div>
-            <header className="header">
-                <div className={`header__top ${value.theme}`}>
+            <header className={`header ${value.theme}`}>
+                <div className="header__top">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 col-md-7">
