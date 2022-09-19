@@ -19,6 +19,7 @@ import Search from './Container/Search/Search';
 import ToggleContext from './Context/ThemeContext';
 import { Provider } from 'react-redux';
 import { store } from './redux/Store';
+import Cart from './Container/Cart/Cart';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <PublicRoute path={"/contact"} exact component={Contacts} />
             <PublicRoute path={"/login"} restricted={true} exact component={Login} />
             <PublicRoute path={"/search"} exact component={Search} />
+            <PublicRoute path={"/cart"} exact component={Cart} />
           </Switch>
           <Footer />
         </ToggleContext>
