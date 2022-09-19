@@ -17,6 +17,7 @@ import PublicRoute from './Route/PublicRoute';
 import PrivateRoute from './Route/PrivateRoute';
 import Search from './Container/Search/Search';
 import ToggleContext from './Context/ThemeContext';
+import Cart from './Container/Cart/Cart';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <PublicRoute path={"/contact"} exact component={Contacts} />
         <PublicRoute path={"/login"}  restricted={true} exact component={Login} />
         <PublicRoute path={"/search"} exact component={Search} />
+        <PublicRoute path={"/cart"} exact component={Cart} />
       </Switch>
       <Footer/>
       </ToggleContext>
