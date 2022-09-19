@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as yup from 'yup';
 import { Formik, Form, useFormik } from 'formik';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Contacts(props) {
+    const value = useContext(themeContext);
+    console.log(value);
 
     let schema = yup.object().shape({
         name: yup.string().required("please enter your name."),
@@ -30,7 +33,7 @@ function Contacts(props) {
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111551.9926412813!2d-90.27317134641879!3d38.606612219170856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sbd!4v1597926938024!5m2!1sen!2sbd" height={500} style={{ border: 0 }} allowFullScreen aria-hidden="false" tabIndex={0} />
             </div>
 
-            <section className="contact spad">
+            <section className={`contact spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-6">

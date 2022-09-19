@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Shopdetails(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+
     return (
         <div>
             <section className="shop-details">
-                <div className="product__details__pic">
+                <div className={`product__details__pic ${value.theme}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
@@ -74,7 +78,7 @@ function Shopdetails(props) {
                         </div>
                     </div>
                 </div>
-                <div className="product__details__content">
+                <div className={`product__details__content ${value.theme}`}>
                     <div className="container">
                         <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
@@ -274,7 +278,7 @@ function Shopdetails(props) {
                 </div>
             </section>
 
-            <section className="related spad">
+            <section className={`related spad ${value.theme }`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
