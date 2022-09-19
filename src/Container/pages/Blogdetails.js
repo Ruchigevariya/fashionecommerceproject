@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { themeContext } from '../../Context/ThemeContext';
 
 function Blogdetails(props) {
+    const value = useContext(themeContext);
+    console.log(value);
+
     return (
         <div>
             <section className="blog-hero spad">
@@ -20,7 +24,7 @@ function Blogdetails(props) {
                 </div>
             </section>
 
-            <section className="blog-details spad">
+            <section className={`blog-details spad ${value.theme}`}>
                 <div className="container">
                     <div className="row d-flex justify-content-center">
                         <div className="col-lg-12">
