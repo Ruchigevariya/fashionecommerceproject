@@ -62,6 +62,9 @@ function Footer(props) {
                             </div>
                         </div>
                     </div>
+                    <div class="scrollup" title="top">
+                        <a href="#"><i class="fa-regular fa-arrow-up"></i></a>
+                    </div>
                 </div>
             </footer>
 
