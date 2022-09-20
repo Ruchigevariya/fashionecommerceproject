@@ -37,13 +37,13 @@ function App() {
                 <PublicRoute path={"/about"} exact component={Aboutus} />
                 <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
                 <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
-                <PrivateRoute path={"/checkout"} exact component={Checkout} />
+                <PublicRoute path={"/checkout"} exact component={Checkout} />
                 <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
                 <PublicRoute path={"/blog"} exact component={Blog} />
                 <PublicRoute path={"/contact"} exact component={Contacts} />
                 <PublicRoute path={"/login"} restricted={true} exact component={Login} />
                 <PublicRoute path={"/search"} exact component={Search} />
-                <PublicRoute path={"/cart"} exact component={Cart} />
+                <PrivateRoute path={"/cart"} exact component={Cart} />
               </Switch>
               <Footer />
             </ToggleContext>
