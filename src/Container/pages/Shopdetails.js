@@ -29,7 +29,6 @@ function Shopdetails(props) {
                                         </div>
                                 <div className="row d-flex justify-content-center align-content-center">
                                     <div>
-                                      
                                         <div className="product__details__text">
                                             <h4>Hooded thermal anorak</h4>
                                             <div className="rating">
