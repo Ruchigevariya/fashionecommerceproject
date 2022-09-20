@@ -36,7 +36,7 @@ export const signupApi = (data) => {
             });
     })
 
-}
+    }
 
 export const signInApi = (data) => {
     console.log("signInApi", data);
