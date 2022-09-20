@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { themeContext } from '../../Context/ThemeContext';
 function Blog(props) {
+    const value = useContext(themeContext);
+    console.log(value);
 
     return (
         <div>
@@ -17,7 +20,7 @@ function Blog(props) {
                 </div>
             </section>
 
-            <section className="blog spad">
+            <section className={`blog spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4 col-md-6 col-sm-6">
