@@ -21,58 +21,90 @@ function Shopdetails(props) {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-lg-3 col-md-3">
-                                <ul className="nav nav-tabs" role="tablist">
-                                    <li className="nav-item">
-                                        <a className="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                            <div className="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-1.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                            <div className="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-2.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                            <div className="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-3.png">
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                            <div className="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                                <i className="fa fa-play" />
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="col-lg-6 col-md-9">
+                            <div >
                                 <div className="tab-content">
-                                    <div className="tab-pane active" id="tabs-1" role="tabpanel">
+                                    <div id="tabs-1" role="tabpanel">
                                         <div className="product__details__pic__item">
                                             <img src="img/shop-details/product-big-2.png" alt />
                                         </div>
-                                    </div>
-                                    <div className="tab-pane" id="tabs-2" role="tabpanel">
-                                        <div className="product__details__pic__item">
-                                            <img src="img/shop-details/product-big-3.png" alt />
+                                <div className="row d-flex justify-content-center align-content-center">
+                                    <div>
+                                      
+                                        <div className="product__details__text">
+                                            <h4>Hooded thermal anorak</h4>
+                                            <div className="rating">
+                                                <i className="fa fa-star" />
+                                                <i className="fa fa-star" />
+                                                <i className="fa fa-star" />
+                                                <i className="fa fa-star" />
+                                                <i className="fa fa-star-o" />
+                                                <span> - 5 Reviews</span>
+                                            </div>
+                                            <h3>$270.00 <span>70.00</span></h3>
+                                            <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
+                                                cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
+                                                with placket.</p>
+                                            <div className="product__details__option">
+                                                <div className="product__details__option__size">
+                                                    <span>Size:</span>
+                                                    <label htmlFor="xxl">xxl
+                                                        <input type="radio" id="xxl" />
+                                                    </label>
+                                                    <label className="active" htmlFor="xl">xl
+                                                        <input type="radio" id="xl" />
+                                                    </label>
+                                                    <label htmlFor="l">l
+                                                        <input type="radio" id="l" />
+                                                    </label>
+                                                    <label htmlFor="sm">s
+                                                        <input type="radio" id="sm" />
+                                                    </label>
+                                                </div>
+                                                <div className="product__details__option__color">
+                                                    <span>Color:</span>
+                                                    <label className="c-1" htmlFor="sp-1">
+                                                        <input type="radio" id="sp-1" />
+                                                    </label>
+                                                    <label className="c-2" htmlFor="sp-2">
+                                                        <input type="radio" id="sp-2" />
+                                                    </label>
+                                                    <label className="c-3" htmlFor="sp-3">
+                                                        <input type="radio" id="sp-3" />
+                                                    </label>
+                                                    <label className="c-4" htmlFor="sp-4">
+                                                        <input type="radio" id="sp-4" />
+                                                    </label>
+                                                    <label className="c-9" htmlFor="sp-9">
+                                                        <input type="radio" id="sp-9" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div className="product__details__cart__option">
+                                                <div className="quantity">
+                                                    <div className="pro-qty">
+                                                        <input type="text" defaultValue={1} />
+                                                    </div>
+                                                </div>
+                                                <a href="#" className="primary-btn">add to cart</a>
+                                            </div>
+                                            <div className="product__details__btns__option">
+                                                <a href="#"><i className="fa fa-heart" /> add to wishlist</a>
+                                                <a href="#"><i className="fa fa-exchange" /> Add To Compare</a>
+                                            </div>
+                                            <div className="product__details__last__option">
+                                                <h5><span>Guaranteed Safe Checkout</span></h5>
+                                                <img src="img/shop-details/details-payment.png" alt />
+                                                <ul>
+                                                    <li><span>SKU:</span> 3812912</li>
+                                                    <li><span>Categories:</span> Clothes</li>
+                                                    <li><span>Tag:</span> Clothes, Skin, Body</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="tab-pane" id="tabs-3" role="tabpanel">
-                                        <div className="product__details__pic__item">
-                                            <img src="img/shop-details/product-big.png" alt />
-                                        </div>
+                                </div>
                                     </div>
-                                    <div className="tab-pane" id="tabs-4" role="tabpanel">
-                                        <div className="product__details__pic__item">
-                                            <img src="img/shop-details/product-big-4.png" alt />
-                                            <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" className="video-popup"><i className="fa fa-play" /></a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -80,7 +112,7 @@ function Shopdetails(props) {
                 </div>
                 <div className={`product__details__content ${value.theme}`}>
                     <div className="container">
-                        <div className="row d-flex justify-content-center">
+                        {/* <div className="row d-flex justify-content-center">
                             <div className="col-lg-8">
                                 <div className="product__details__text">
                                     <h4>Hooded thermal anorak</h4>
@@ -154,7 +186,7 @@ function Shopdetails(props) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="product__details__tab">
@@ -278,7 +310,7 @@ function Shopdetails(props) {
                 </div>
             </section>
 
-            <section className={`related spad ${value.theme }`}>
+            <section className={`related spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -289,7 +321,7 @@ function Shopdetails(props) {
                         <div className="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
-                                <img src="img/product/product-1.jpg" alt=''/>
+                                    <img src="img/product/product-1.jpg" alt='' />
                                     <span className="label">New</span>
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
@@ -325,7 +357,7 @@ function Shopdetails(props) {
                         <div className="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
-                                <img src="img/product/product-2.jpg" alt=''/>
+                                    <img src="img/product/product-2.jpg" alt='' />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>
@@ -360,7 +392,7 @@ function Shopdetails(props) {
                         <div className="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                             <div className="product__item sale">
                                 <div className="product__item__pic set-bg">
-                                <img src="img/product/product-3.jpg" alt=''/>
+                                    <img src="img/product/product-3.jpg" alt='' />
                                     <span className="label">Sale</span>
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
@@ -396,7 +428,7 @@ function Shopdetails(props) {
                         <div className="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                             <div className="product__item">
                                 <div className="product__item__pic set-bg">
-                                <img src="img/product/product-4.jpg" alt=''/>
+                                    <img src="img/product/product-4.jpg" alt='' />
                                     <ul className="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt /></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt /> <span>Compare</span></a></li>

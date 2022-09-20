@@ -1513,7 +1513,7 @@ ol {
 -----------------------*/
 
 .product__details__pic {
-	text-align: center;
+	text-align: left;
 	background: #f3f2ee;
 	padding: 40px 0 60px;
 	margin-bottom: 100px;
@@ -3920,10 +3920,15 @@ ol {
 	color:#212121 !important;
 }
 
-.dark .header__menu ul li a, .banner__item__text h2, a{
+.dark .header__menu ul li a{
 	color:#fff !important;
 }
-
+/* .dark .banner__item__text h2, a{
+	color: #fff ;
+} */
+.dark .product__details__breadcrumb a{
+	color: #fff;
+} 
 .light .header__top__links a{
 	color:#fff !important;
 }
@@ -3953,6 +3958,13 @@ ol {
 	color:#fff !important;
 }
 
+.dark .product__details__tab__content p{
+	color:#fff !important;
+}
+
+.light .product__details__tab__content p{
+	color:#212121 !important;
+}
 .dark .section-title h2{
 	color:#fff !important;
 }
