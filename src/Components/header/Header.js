@@ -1,10 +1,17 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
+import { useDispatch, useSelector} from 'react-redux';
+import { logOutAction } from '../../redux/action/auth.action';
+import Alert from '../Alert/Alert';
 
 function Header(props) {
     const value = useContext(themeContext);
     console.log(value);
+
+    const dispatch = useDispatch()
+
+    const auth = useSelector(state => state.auth)
 
     return (
         <div>
@@ -21,8 +28,15 @@ function Header(props) {
                                 <div className="header__top__right">
                                     <div className="header__top__links">
                                         <button onClick={() => value.toggle_theme(value.theme)} className="mx-3">Change theme</button>
-                                        <NavLink to={"/login"}>Login</NavLink>
+                                        {
+                                            auth.user === null ?
+                                                <NavLink to={"/login"}>Login</NavLink>
+                                                :
+                                                <NavLink to={"/login"} onClick={() => {dispatch(logOutAction)}}>Logout</NavLink>
+
+                                        }
                                         <a href="#">FAQs</a>
+                                        <Alert/>
                                     </div>
 
                                     <div className="header__top__hover">
