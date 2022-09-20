@@ -36,9 +36,7 @@ function Search(props) {
     const handlesearch = (val) => {
         console.log(val);
 
-        let localData = JSON.parse(localStorage.getItem("product"));
-
-        let fData = localData.filter((p) => (
+        let fData = data.filter((p) => (
             p.id.toString().includes(val) ||
             p.name.toLowerCase().includes(val.toLowerCase()) ||
             p.category.toLowerCase().includes(val.toLowerCase()) ||
