@@ -10,7 +10,6 @@ import Shopdetails from './Container/pages/Shopdetails';
 import Shoppingcart from './Container/pages/Shoppingcart';
 import Checkout from './Container/pages/Checkout';
 import Blogdetails from './Container/pages/Blogdetails';
-import Blog from './Container/blog/Blog';
 import Contacts from './Container/Contacts/Contacts';
 import Login from './Container/Login/Login';
 import PublicRoute from './Route/PublicRoute';
@@ -39,7 +38,6 @@ function App() {
                 <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
                 <PublicRoute path={"/checkout"} exact component={Checkout} />
                 <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
-                <PublicRoute path={"/blog"} exact component={Blog} />
                 <PublicRoute path={"/contact"} exact component={Contacts} />
                 <PublicRoute path={"/login"} restricted={true} exact component={Login} />
                 <PublicRoute path={"/search"} exact component={Search} />

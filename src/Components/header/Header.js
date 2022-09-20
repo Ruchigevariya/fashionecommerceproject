@@ -88,9 +88,6 @@ function Header(props) {
                                         </ul>
                                     </li>
                                     <li>
-                                        <NavLink to="/blog">Blog</NavLink>
-                                    </li>
-                                    <li>
                                         <NavLink to="/contact">Contacts</NavLink>
                                     </li>
                                 </ul>
