@@ -36,9 +36,7 @@ function Search(props) {
     const handlesearch = (val) => {
         console.log(val);
 
-        let localData = JSON.parse(localStorage.getItem("product"));
-
-        let fData = localData.filter((p) => (
+        let fData = data.filter((p) => (
             p.id.toString().includes(val) ||
             p.name.toLowerCase().includes(val.toLowerCase()) ||
             p.category.toLowerCase().includes(val.toLowerCase()) ||
@@ -84,7 +82,7 @@ function Search(props) {
                                     type="text"
                                     fullWidth
                                     variant="standard"
-                                    onChange={(p) => handlesearch(p.target.value)}
+                                    onChange={(e) => handlesearch(e.target.value)}
                                 />
                                 <table>
                                     <thead>
@@ -98,16 +96,16 @@ function Search(props) {
                                         </tr>
                                     </thead>
                                     {
-                                        finalData.map((d) => {
+                                        finalData.map((p, i) => {
                                             return (
-                                                <tbody>
+                                                <tbody key={i}>
                                                     <tr>
-                                                        <td>{d.id}</td>
-                                                        <td>{d.name}</td>
-                                                        <td>{d.category}</td>
-                                                        <td>{d.price}</td>
-                                                        <td>{d.quantity}</td>
-                                                        <td>{d.status}</td>
+                                                        <td>{p.id}</td>
+                                                        <td>{p.name}</td>
+                                                        <td>{p.category}</td>
+                                                        <td>{p.price}</td>
+                                                        <td>{p.quantity}</td>
+                                                        <td>{p.status}</td>
                                                     </tr>
                                                 </tbody>
                                             )
