@@ -82,7 +82,7 @@ function Shopdetails(props) {
                                                 <input type="text" defaultValue={1} />
                                             </div>
                                         </div>
-                                        <a href="#" className="primary-btn">add to cart</a>
+                                        <NavLink className="primary-btn" to={"/cart"} >add to cart</NavLink>
                                     </div>
                                     <div className="product__details__btns__option">
                                         <a href="#"><i className="fa fa-heart" /> add to wishlist</a>
@@ -323,7 +323,7 @@ function Shopdetails(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -358,7 +358,7 @@ function Shopdetails(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -394,7 +394,7 @@ function Shopdetails(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
@@ -429,7 +429,7 @@ function Shopdetails(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Diagonal Textured Cap</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />

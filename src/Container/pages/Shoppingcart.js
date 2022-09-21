@@ -1,10 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
 
 function Shoppingcart(props) {
     const value = useContext(themeContext);
     console.log(value);
+
+    const [counter, setCounter] = useState(1);
+
+    const incrememt = () => {
+        setCounter(counter + 1)
+    }
+
+    const decrement = () => {
+        setCounter(counter - 1)
+    }
 
     return (
         <div>
@@ -53,7 +63,9 @@ function Shoppingcart(props) {
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <input type="text" defaultValue={1} />
+                                                        <button onClick={() => incrememt()}>+</button>
+                                                        {counter}
+                                                        <button onClick={() => decrement()}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -73,7 +85,9 @@ function Shoppingcart(props) {
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <input type="text" defaultValue={1} />
+                                                        <button onClick={() => incrememt()}>+</button>
+                                                        {counter}
+                                                        <button onClick={() => decrement()}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -93,7 +107,9 @@ function Shoppingcart(props) {
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <input type="text" defaultValue={1} />
+                                                        <button onClick={() => incrememt()}>+</button>
+                                                        {counter}
+                                                        <button onClick={() => decrement()}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -113,7 +129,10 @@ function Shoppingcart(props) {
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <input type="text" defaultValue={1} />
+                                                        {/* <input type="text" defaultValue={1} /> */}
+                                                        <button onClick={() => incrememt()}>+</button>
+                                                        {counter}
+                                                        <button onClick={() => decrement()}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
