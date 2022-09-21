@@ -62,9 +62,10 @@ function Footer(props) {
                             </div>
                         </div>
                     </div>
-                    <div class="scrollup" title="top">
-                        <a href="#"><i class="fa-regular fa-arrow-up"></i></a>
+                    <div className="scrollup" title="top">
+                        <a href="#"><i className="arrow_up"></i></a>
                     </div>
+                    {/* <button href='#' className='btn btn-lg back-to-top'><i className="fas fa-angle-up" /></button> */}
                 </div>
             </footer>
 
