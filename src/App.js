@@ -21,6 +21,10 @@ import { persistor, store } from './redux/Store';
 import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/integration/react'
 import Cart from './Container/Cart/Cart';
+import Men from './Container/Categories_list/Men';
+import Women from './Container/Categories_list/Women';
+import Kids from './Container/Categories_list/Kids';
+import Accessories from './Container/Categories_list/Accessories';
 
 function App() {
   return (
@@ -42,6 +46,10 @@ function App() {
                 <PublicRoute path={"/login"} restricted={true} exact component={Login} />
                 <PublicRoute path={"/search"} exact component={Search} />
                 <PrivateRoute path={"/cart"} exact component={Cart} />
+                <PublicRoute path={"/men"} exact component={Men} />
+                <PublicRoute path={"/women"} exact component={Women} />
+                <PublicRoute path={"/kids"} exact component={Kids} />
+                <PublicRoute path={"/accessories"} exact component={Accessories} />
               </Switch>
               <Footer />
             </ToggleContext>
