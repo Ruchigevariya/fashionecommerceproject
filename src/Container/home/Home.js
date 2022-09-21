@@ -55,6 +55,28 @@ function Home(props) {
                 </div>
             </section>
 
+            <section className='category py-5'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='category-1 col-3'>
+                            <img src="img/instagram/instagram-2.jpg" />
+                            <h3>Men</h3>
+                        </div>
+                        <div className='category-1 col-3'>
+                            <img src="img/product/product-13.jpg" />
+                            <h3>Women</h3>
+                        </div>
+                        <div className='category-1 col-3'>
+                            <img src="img/product/product-2.jpg" />
+                            <h3>Kids</h3>
+                        </div>
+                        <div className='category-1 col-3'>
+                            <img src="img/instagram/instagram-1.jpg" />
+                            <h3>Accessories</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className={`banner spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">

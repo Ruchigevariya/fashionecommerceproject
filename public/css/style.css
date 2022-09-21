@@ -4209,3 +4209,8 @@ p {
 		transform: translateY(-15px);
 	}
 }
+
+.category .category-1 h3{
+	text-align: center;
+	margin-top: 20px;
+}
