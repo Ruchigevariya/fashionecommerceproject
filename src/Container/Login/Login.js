@@ -140,7 +140,7 @@ function Login(props) {
                                     <div className="text-center"><button type="submit">Submit</button></div>
                                     :
                                     usertype === 'login' ?
-                                        <div className="text-center"><button type="submit">Login</button></div>
+                                        <div className="text-center "><button type="submit">Login</button></div>
                                         :
                                         <div className="text-center"><button type="submit">Signup</button></div>
                             }
@@ -150,9 +150,9 @@ function Login(props) {
                                     null
                                     :
                                     usertype === 'login' ?
-                                        <div className='row mt-3'>
-                                            <p>OR</p>
-                                            <div className="text-center mt-3"><button type="submit" onClick={() => {handleGoogleSignIn()}}>signIn Google</button></div>
+                                        <div className='row mx-auto text-center'>
+                                            <p className='text-center mx-auto col-12 my-3 login'>OR</p>
+                                            <div className="mx-auto"><button type="submit" onClick={() => {handleGoogleSignIn()}}>signIn Google</button></div>
                                         </div>
                                     :
                                     null
@@ -163,7 +163,7 @@ function Login(props) {
                                     :
                                     <div className="text-center mt-3 mb-3">already have an account <a onClick={() => { setReset('false'); setUserType('login') }}>Login</a></div>
                             }
-                            <a onClick={() => setReset('true')}>forgot password</a>
+                            <div className='text-center' onClick={() => setReset('true')}>forgot password</div>
                         </Form>
                     </Formik>
                 </div>

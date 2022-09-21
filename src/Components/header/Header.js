@@ -59,10 +59,10 @@ function Header(props) {
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6">
-                            <nav className="header__menu mobile-menu">
+                            <nav className="header__menu mobile-menu active">
                                 <ul>
-                                    <li className="active">
-                                        <NavLink className="active" to={"/"}>Home</NavLink>
+                                    <li >
+                                        <NavLink to={"/"}>Home</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to={"/shop"}>Shop</NavLink>

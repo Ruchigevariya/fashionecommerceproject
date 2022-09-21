@@ -432,16 +432,17 @@ ol {
 }
 
 .header__menu ul li.active a:after {
+	color: #e53637 !important;
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
 }
 
-.header__menu ul li:hover a:after {
+/* .header__menu ul li:hover a:after {
 	-webkit-transform: scale(1);
 	-ms-transform: scale(1);
 	transform: scale(1);
-}
+} */
 
 .header__menu ul li:hover .dropdown {
 	top: 32px;
@@ -3530,6 +3531,8 @@ ol {
 .appointment .php-email-form button {
 	background-color: black;
 	color: #fff;
+	border-radius: 25px;
+	padding: 10px 20px;
 }
 
 /* Wide Mobile = 480px */
@@ -4214,3 +4217,22 @@ p {
 	text-align: center;
 	margin-top: 20px;
 }
+
+.login {
+	color: #000 !important;
+}
+
+.header__menu ul li a.active{
+	color: #e53637 !important;
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    transform: scale(1);
+}
+
+.header__menu ul li:hover a:after{
+	color: #e53637 !important;
+    -webkit-transform: scale(1) !important;
+    -ms-transform: scale(1) !important;
+    transform: scale(1);
+}
+

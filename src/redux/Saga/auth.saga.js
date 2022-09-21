@@ -25,10 +25,10 @@ function* signIn(action) {
     history.push("/")
 
     yield put (setAlert({ text: "Login sucessfully.", color: "success"}))
-    console.log(user);
+    console.log(user);                
   } catch (e) {
-    yield put (setAlert({ text: e.payload, color: "error"}))
     console.log(e);
+    yield put (setAlert({ text: e.payload, color: "error"}))
   }
 }
 
@@ -41,8 +41,8 @@ function* googleSignIn(action) {
     yield put (setAlert({ text: "Login sucessfully.", color: "success"}))
     console.log(user);
   } catch (e) {
-    yield put (setAlert({ text: e.payload, color: "error"}))
     console.log(e);
+    yield put (setAlert({ text: e.payload, color: "error"}))
   }
 }
 

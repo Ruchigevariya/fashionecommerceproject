@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
 
 function Home(props) {
@@ -142,7 +143,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -177,7 +178,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Piqué Biker Jacket</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -213,7 +214,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Multi-pocket Chest Bag</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
@@ -248,7 +249,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Diagonal Textured Cap</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -283,7 +284,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Lether Backpack</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -319,7 +320,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Ankle Boots</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star" />
                                         <i className="fa fa-star" />
@@ -354,7 +355,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>T-shirt Contrast Pocket</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
@@ -389,7 +390,7 @@ function Home(props) {
                                 </div>
                                 <div className="product__item__text">
                                     <h6>Basic Flowing Scarf</h6>
-                                    <a href="#" className="add-cart">+ Add To Cart</a>
+                                    <NavLink to={"/cart"}>+ Add To Cart</NavLink>
                                     <div className="rating">
                                         <i className="fa fa-star-o" />
                                         <i className="fa fa-star-o" />
