@@ -25,38 +25,48 @@ import Men from './Container/Categories_list/Men';
 import Women from './Container/Categories_list/Women';
 import Kids from './Container/Categories_list/Kids';
 import Accessories from './Container/Categories_list/Accessories';
+import Layout from '../src/Admin/Components/Layout/Layout';
+import Product from '../src/Admin/Container/Product/Product';
+import Counter from '../src/Admin/Container/Counter/Counter';
+import Category from '../src/Admin/Container/Category/Category';
 
 function App() {
   return (
-    <div>
-      <SnackbarProvider maxSnack={3}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <ToggleContext>
-              <Header />
-              <Switch>
-                <PublicRoute path={"/"} exact component={Home} />
-                <PublicRoute path={"/shop"} exact component={Shop} />
-                <PublicRoute path={"/about"} exact component={Aboutus} />
-                <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
-                <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
-                <PublicRoute path={"/checkout"} exact component={Checkout} />
-                <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
-                <PublicRoute path={"/contact"} exact component={Contacts} />
-                <PublicRoute path={"/login"} restricted={true} exact component={Login} />
-                <PublicRoute path={"/search"} exact component={Search} />
-                <PrivateRoute path={"/cart"} exact component={Cart} />
-                <PublicRoute path={"/men"} exact component={Men} />
-                <PublicRoute path={"/women"} exact component={Women} />
-                <PublicRoute path={"/kids"} exact component={Kids} />
-                <PublicRoute path={"/accessories"} exact component={Accessories} />
-              </Switch>
-              <Footer />
-            </ToggleContext>
-          </PersistGate>
-        </Provider>
-      </SnackbarProvider>
-    </div>
+    <SnackbarProvider maxSnack={3}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ToggleContext>
+            <Header />
+            <Switch>
+              <PublicRoute path={"/"} exact component={Home} />
+              <PublicRoute path={"/shop"} exact component={Shop} />
+              <PublicRoute path={"/about"} exact component={Aboutus} />
+              <PublicRoute path={"/shop-details"} exact component={Shopdetails} />
+              <PublicRoute path={"/shopping-cart"} exact component={Shoppingcart} />
+              <PublicRoute path={"/checkout"} exact component={Checkout} />
+              <PublicRoute path={"/blog-details"} exact component={Blogdetails} />
+              <PublicRoute path={"/contact"} exact component={Contacts} />
+              <PublicRoute path={"/login"} restricted={true} exact component={Login} />
+              <PublicRoute path={"/search"} exact component={Search} />
+              <PrivateRoute path={"/cart"} exact component={Cart} />
+              <PublicRoute path={"/men"} exact component={Men} />
+              <PublicRoute path={"/women"} exact component={Women} />
+              <PublicRoute path={"/kids"} exact component={Kids} />
+              <PublicRoute path={"/accessories"} exact component={Accessories} />
+
+                 // Admin path
+              <Layout>
+                <Route path={"/product"} exact component={Product} />
+                <Route path={"/counter"} exact component={Counter} />
+                <Route path={"/category"} exact component={Category} />
+              </Layout>
+
+            </Switch>
+            <Footer />
+          </ToggleContext>
+        </PersistGate>
+      </Provider>
+    </SnackbarProvider>
   );
 }
 
