@@ -554,6 +554,28 @@ function Home(props) {
                 </div>
             </section>
 
+            {/* <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(window).scroll(function () {
+                        if ($(window).scrollTop() >= 130) {
+                            $(".main-menu").addClass("fixed");
+                        }
+                        else {
+                            $(".main-menu").removeClass("fixed");
+                        }
+                    });
+                    $(window).scroll(function () {
+                        if ($(window).scrollTop() >= 300) {
+                            $(".back-to-top").addClass("fix");
+                        }
+                        else {
+                            $(".back-to-top").removeClass("fix");
+                        }
+                    });
+                });
+            </script> */}
+
         </div>
     );
 }

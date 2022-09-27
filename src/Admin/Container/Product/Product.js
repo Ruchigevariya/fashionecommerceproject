@@ -14,6 +14,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProductData, getProduct, updateProductData } from '../../../redux/action/Product.action';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Product(props) {
     const [open, setOpen] = useState(false);
@@ -23,6 +25,8 @@ function Product(props) {
     const [update, setUpdate] = useState(false);
     const [filterData, setFilterData] = useState([]);
     const c = useSelector(state => state.counter);
+    // const category = useSelector(state => state.category)
+    // console.log(category);
 
     const handleClickOpen = () => {
         setOpen(true);
