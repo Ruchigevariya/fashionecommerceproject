@@ -73,7 +73,7 @@ function Login(props) {
         onSubmit: values => {
             if (usertype === 'login' && reset === 'false') {
                 handleLogin(values);
-            } else if(usertype === 'login' && reset === 'false'){
+            } else if(usertype === 'signup' && reset === 'false'){
                 handleData(values);
             } else{
                 dispatch(forgotPasswordAction(values))
