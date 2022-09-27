@@ -82,6 +82,10 @@ export const updateCategory = (data) => async (dispatch) => {
 
         if (typeof data.category_img === 'string') {
             console.log("No change image");
+            await updateDoc(categoryRef, {
+            name: data.name,
+        });
+        dispatch({ type: ActionTypes.UPDATE_CATEGORYDATA, payload: data })
         } else {
             console.log("change image");
             const delcategoryRef = ref(storage, 'category/' + data.fileName);

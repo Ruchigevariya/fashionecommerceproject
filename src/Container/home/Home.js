@@ -1,10 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
+import { getCategory } from '../../redux/action/Category.action';
 
 function Home(props) {
     const value = useContext(themeContext);
     console.log(value);
+
+    const category = useSelector(state => state.category)
+
+    const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        dispatch(getCategory())
+    }, [])
 
     return (
         <div>
@@ -62,7 +73,17 @@ function Home(props) {
                         <h2>Categories</h2>
                     </div>
                     <div className='row'>
-                        <div className='category-1 col-3'>
+                        {
+                            category.category.map((c) => {
+                                return (
+                                    <div className='category-1 col-3'>
+                                        <NavLink to={"/men"}><img src={c.category_img} /></NavLink>
+                                        <h4>{c.name}</h4>
+                                    </div>
+                                )
+                            })
+                        }
+                        {/* <div className='category-1 col-3'>
                             <NavLink to={"/men"}><img src="img/instagram/instagram-2.jpg" /></NavLink>
                             <h4>Men</h4>
                         </div>
@@ -77,7 +98,7 @@ function Home(props) {
                         <div className='category-1 col-3'>
                             <NavLink to={"/accessories"}><img src="img/instagram/instagram-1.jpg" /></NavLink>
                             <h4>Accessories</h4>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>
