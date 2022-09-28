@@ -177,6 +177,14 @@ export const updateProductData = (data) => async (dispatch) => {
     
         if (typeof data.product_img === 'string') {
             console.log("No change Image.");
+            await updateDoc(productref, {
+            name: data.name,
+            category: data.category,
+            price: data.price,
+            quantity: data.quantity,
+            status: data.status
+        });
+        dispatch({ type: ActionTypes.UPDATE_PRODUCTDATA, payload: data })
         } else {
             const delproductRef = ref(storage, 'product/' + data.fileName);
             const randomNum = Math.floor(Math.random() * 10000000).toString()

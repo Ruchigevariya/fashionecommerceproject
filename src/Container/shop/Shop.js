@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
+import Category from '../Category/Category';
+import View_Product from '../View_Product/View_Product';
 
 function Shop(props) {
     const value = useContext(themeContext);
@@ -24,10 +26,18 @@ function Shop(props) {
                 </div>
             </section>
 
+<section>
+    <div className='container'>
+        <div className='row'>
+            <Category />
+        </div>
+    </div>
+</section>
             <section className={`shop spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3">
+                    <View_Product />
+                        {/* <div className="col-lg-3">
                             <div className="shop__sidebar">
                                 <div className="shop__sidebar__search">
                                     <form action="#">
@@ -189,8 +199,8 @@ function Shop(props) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-lg-9">
+                        </div> */}
+                        {/* <div className="col-lg-9">
                             <div className="shop__product__option">
                                 <div className="row">
                                     <div className="col-lg-6 col-md-6 col-sm-6">
@@ -659,7 +669,7 @@ function Shop(props) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

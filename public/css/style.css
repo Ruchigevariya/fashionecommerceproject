@@ -4077,10 +4077,10 @@ ol {
 	color: #fff !important;
 }
 
-.dark .product__item__text h6,
+/* .dark .product__item__text h6,
 h5 {
 	color: #fff !important;
-}
+} */
 
 .dark .product__details__tab__content p {
 	color: #fff !important;
@@ -4242,7 +4242,7 @@ p {
 }
 
 .category-1 img:hover{
-	box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.7);
 }
 
 .product_item .product__item__pic .set-bg img:hover{
