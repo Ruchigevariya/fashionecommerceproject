@@ -7,7 +7,7 @@ import View_Product from '../View_Product/View_Product';
 function Shop(props) {
     const value = useContext(themeContext);
     console.log(value);
-    
+
     return (
         <div>
             <section className="breadcrumb-option">
@@ -26,17 +26,17 @@ function Shop(props) {
                 </div>
             </section>
 
-<section>
-    <div className='container'>
-        <div className='row'>
-            <Category />
-        </div>
-    </div>
-</section>
+            <section>
+                <div className='container'>
+                    <div className='row'>
+                        <Category />
+                    </div>
+                </div>
+            </section>
             <section className={`shop spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
-                    <View_Product />
+                        <View_Product />
                         {/* <div className="col-lg-3">
                             <div className="shop__sidebar">
                                 <div className="shop__sidebar__search">
