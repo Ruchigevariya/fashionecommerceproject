@@ -51,10 +51,6 @@ function App() {
               <PublicRoute path={"/login"} restricted={true} exact component={Login} />
               <PublicRoute path={"/search"} exact component={Search} />
               <PrivateRoute path={"/cart"} exact component={Cart} />
-              {/* <PublicRoute path={"/men"} exact component={Men} />
-              <PublicRoute path={"/women"} exact component={Women} />
-              <PublicRoute path={"/kids"} exact component={Kids} />
-              <PublicRoute path={"/accessories"} exact component={Accessories} /> */}
               <PublicRoute path={"/product_details"} exact component={Product_Details} />
               <PublicRoute path={"/allproduct"} exact component={ProductWise} />
 
