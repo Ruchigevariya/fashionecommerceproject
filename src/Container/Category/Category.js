@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { history } from '../../history';
 import { getCategory } from '../../redux/action/Category.action';
 
 function Category(props) {
@@ -13,6 +14,10 @@ function Category(props) {
         dispatch(getCategory())
     }, [])
 
+    const handleId = (name) => {
+        history.push("/allproduct" , {name:name} )
+    }
+    
     return (
         <div>
             <section className='category py-5'>
@@ -25,7 +30,11 @@ function Category(props) {
                             category.category.map((c) => {
                                 return (
                                     <div className='category-1 col-3'>
-                                        <NavLink to={"/men"}><img src={c.category_img} /></NavLink>
+                                    <div className='category'>
+                                        {
+                                        <a onClick={() => handleId(c.name)}><img src={c.category_img} /></a>
+                                        }
+                                    </div>
                                         <h4>{c.name}</h4>
                                     </div>
                                 )

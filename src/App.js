@@ -29,6 +29,8 @@ import Layout from '../src/Admin/Components/Layout/Layout';
 import Product from '../src/Admin/Container/Product/Product';
 import Counter from '../src/Admin/Container/Counter/Counter';
 import Category from '../src/Admin/Container/Category/Category';
+import Product_Details from './Container/Product_Details/Product_Details';
+import ProductWise from './Container/Categories_list/ProductWise/ProductWise';
 
 function App() {
   return (
@@ -49,10 +51,13 @@ function App() {
               <PublicRoute path={"/login"} restricted={true} exact component={Login} />
               <PublicRoute path={"/search"} exact component={Search} />
               <PrivateRoute path={"/cart"} exact component={Cart} />
-              <PublicRoute path={"/men"} exact component={Men} />
+              {/* <PublicRoute path={"/men"} exact component={Men} />
               <PublicRoute path={"/women"} exact component={Women} />
               <PublicRoute path={"/kids"} exact component={Kids} />
-              <PublicRoute path={"/accessories"} exact component={Accessories} />
+              <PublicRoute path={"/accessories"} exact component={Accessories} /> */}
+              <PublicRoute path={"/product_details"} exact component={Product_Details} />
+              <PublicRoute path={"/allproduct"} exact component={ProductWise} />
+
 
                  // Admin path
               <Layout>

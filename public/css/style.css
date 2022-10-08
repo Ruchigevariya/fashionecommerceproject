@@ -1529,7 +1529,7 @@ ol {
 
 .product__details__pic .nav-tabs {
 	border-bottom: none;
-	width: 105px;
+	/* width: 105px; */
 }
 
 .product__details__pic .nav-tabs .nav-item {
@@ -1623,7 +1623,10 @@ ol {
 	margin-top: -28px;
 	margin-left: -28px;
 }
-
+.product__details__pic__set-bg img{
+	display: block;
+	width:100%
+}
 .product__details__text {
 	text-align: center;
 }

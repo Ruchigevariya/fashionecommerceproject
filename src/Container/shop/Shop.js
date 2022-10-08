@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
 import Category from '../Category/Category';
+import Product_Details from '../Product_Details/Product_Details';
 import View_Product from '../View_Product/View_Product';
 
 function Shop(props) {

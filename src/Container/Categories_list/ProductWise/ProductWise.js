@@ -1,15 +1,16 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { themeContext } from '../../Context/ThemeContext';
-import { history } from '../../history';
-import { getProduct } from '../../redux/action/Product.action';
+import { themeContext } from '../../../Context/ThemeContext';
+import { history } from '../../../history';
+import { getProduct } from '../../../redux/action/Product.action';
 
-function View_Product(props) {
+function ProductWise(props) {
     const value = useContext(themeContext);
     console.log(value);
 
     const product = useSelector(state => state.Product)
+    const category = useSelector(state => state.category)
 
     const dispatch = useDispatch()
 
@@ -20,6 +21,13 @@ function View_Product(props) {
     const handlePush = (name) => {
         history.push('/Product_Details', { name: name })
     }
+
+    // const handleCart = (id) => {
+    //     dispatch(addtoCart(id))
+    // }
+
+    let fData = product.Product.filter((p) => p.category === props.location.state.name)
+    console.log(fData);
 
     return (
         <div>
@@ -32,7 +40,7 @@ function View_Product(props) {
                     </div>
                     <div className="row product__filter">
                         {
-                            product.Product.map((p) => (
+                            fData.map((p) => (
                                 <div className="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 
                                     <div className="product__item">
@@ -81,4 +89,4 @@ function View_Product(props) {
     );
 }
 
-export default View_Product;
+export default ProductWise;
