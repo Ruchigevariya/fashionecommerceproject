@@ -1,16 +1,59 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../Context/ThemeContext';
+import { cartDecrement, cartDelete, cartIncrement } from '../../redux/action/Cart.action';
 
 function Cart(props) {
-    const [counter, setCounter] = useState(1);
+    const value = useContext(themeContext);
+    console.log(value);
 
-    const incrememt = () => {
-        setCounter(counter + 1)
+    const product = useSelector(state => state.Product)
+
+    const dispatch = useDispatch()
+
+    // const [counter, setCounter] = useState(1);
+
+    // const incrememt = () => {
+    //     setCounter(counter + 1)
+    // }
+
+    // const decrement = () => {
+    //     setCounter(counter - 1)
+    // }
+
+    const cart = useSelector(state => state.cart)
+    console.log(cart.cart);
+
+    const cartData = []
+    product.Product.map((p) => {
+        cart.cart.map((c) => {
+            if (p.id === c.id) {
+                cartData.push({ ...p, quantity: c.quantity })
+            }
+        })
+    })
+
+    const handleDelete = (id) => {
+        dispatch(cartDelete(id))
     }
 
-    const decrement = () => {
-        setCounter(counter - 1)
+    const handleDecrement = (id) => {
+        console.log(id);
+        dispatch(cartDecrement(id))
     }
+
+    const handleIncrement = (id) => {
+        console.log(id);
+        dispatch(cartIncrement(id))
+    }
+
+    let pTotal = 0
+    function productTotal(price, quantity) {
+        pTotal = pTotal + Number(price * quantity)
+        return Number(price * quantity).toLocaleString()
+    }
+
 
     return (
         <div>
@@ -46,29 +89,32 @@ function Cart(props) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                    {
+                                        cartData.map((c , i) => (
+                                            <>
+                                            <tr>
                                             <td className="product__cart__item">
                                                 <div className="product__cart__item__pic">
-                                                    <img src="img/shopping-cart/cart-1.jpg" alt />
+                                                    <img src={c.product_img} alt />
                                                 </div>
                                                 <div className="product__cart__item__text">
-                                                    <h6>T-shirt Contrast Pocket</h6>
-                                                    <h5>$98.49</h5>
+                                                    <h6>{c.name}</h6>
+                                                    <h5>${c.price}</h5>
                                                 </div>
                                             </td>
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <button onClick={() => incrememt()}>+</button>
-                                                        {counter}
-                                                        <button onClick={() => decrement()}>-</button>
+                                                        <button onClick={() => handleDecrement(c.id)}>+</button>
+                                                        <span>{c.quantity}</span>
+                                                        <button onClick={() => handleIncrement(c.id)}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td className="cart__price">$ 30.00</td>
-                                            <td className="cart__close"><i className="fa fa-close" /></td>
+                                            <td className="cart__price">${c.price}</td>
+                                            <td className="cart__close"><div onClick={() => handleDelete(c.id)}><i className="fa fa-close" /></div></td>
                                         </tr>
-                                        <tr>
+                                        {/* <tr>
                                             <td className="product__cart__item">
                                                 <div className="product__cart__item__pic">
                                                     <img src="img/shopping-cart/cart-2.jpg" alt />
@@ -133,7 +179,11 @@ function Cart(props) {
                                             </td>
                                             <td className="cart__price">$ 30.00</td>
                                             <td className="cart__close"><i className="fa fa-close" /></td>
-                                        </tr>
+                                        </tr> */}
+                                            </>
+                                        ))
+                                    }
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -169,8 +219,8 @@ function Cart(props) {
                         </div>
                     </div>
                 </div>
-            </section >
-        </div >
+            </section>
+        </div>
     );
 }
 

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
+import { addtoCart } from '../../redux/action/Cart.action';
 import { getProduct } from '../../redux/action/Product.action';
 
 function Product_Details(props) {
@@ -17,9 +18,9 @@ function Product_Details(props) {
         dispatch(getProduct())
     }, [])
 
-    // const handleCart = (id) => {
-    //     dispatch(addtoCart(id))
-    // }
+    const handleCart = (id) => {
+        dispatch(addtoCart(id))
+    }
 
     let fData = product.Product.filter((f) => f.name === props.location.state.name)
     console.log(fData);
@@ -43,7 +44,7 @@ function Product_Details(props) {
                                                         <img src={p.product_img} alt />
                                                         <div className='product__item__text'>
                                                             <h6>{p.name}</h6>
-                                                            <NavLink to={"/cart"}>+ Add To Cart</NavLink>
+                                                            <NavLink to={"/cart"}  onClick={() => handleCart(p.id)}><img src="img/icon/cart.png" alt /> <span>0</span>+ Add To Cart</NavLink>
                                                             <div className="rating">
                                                                 <i className="fa fa-star-o" />
                                                                 <i className="fa fa-star-o" />

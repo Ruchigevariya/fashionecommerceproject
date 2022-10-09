@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../../Context/ThemeContext';
 import { history } from '../../../history';
+import { addtoCart } from '../../../redux/action/Cart.action';
 import { getProduct } from '../../../redux/action/Product.action';
 
+// category all [men , women, accerroies, kids]
 function ProductWise(props) {
     const value = useContext(themeContext);
     console.log(value);
@@ -22,9 +24,9 @@ function ProductWise(props) {
         history.push('/Product_Details', { name: name })
     }
 
-    // const handleCart = (id) => {
-    //     dispatch(addtoCart(id))
-    // }
+    const handleCart = (id) => {
+        dispatch(addtoCart(id))
+    }
 
     let fData = product.Product.filter((p) => p.category === props.location.state.name)
     console.log(fData);
@@ -55,7 +57,7 @@ function ProductWise(props) {
                                         </div>
                                         <div className="product__item__text">
                                             <h6>{p.name}</h6>
-                                            <NavLink to={"/cart"}>+ Add To Cart</NavLink>
+                                            <NavLink to={"/cart"} onClick={() => handleCart(p.id)}><img src="img/icon/cart.png" alt /> <span>0</span>+ Add To Cart</NavLink>
                                             <div className="rating">
                                                 <i className="fa fa-star-o" />
                                                 <i className="fa fa-star-o" />

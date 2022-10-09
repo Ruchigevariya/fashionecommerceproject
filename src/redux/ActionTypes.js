@@ -14,6 +14,10 @@ export const RESET_ALERT = 'RESET_ALERT'
 
 export const FORGOTPASSWORD_USER = 'FORGOTPASSWORD_USER'
 
+export const ADD_CART = "ADD_CART"
+export const DELETE_CART = "DELETE_CART"
+export const CART_INCREMENT = "CART_INCREMENT"
+export const CART_DECREMENT = "CART_DECREMENT"
 
 // admin ActionTypes
 
