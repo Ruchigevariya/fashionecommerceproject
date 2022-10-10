@@ -34,7 +34,7 @@ function Cart(props) {
         })
     })
 
-    const handleDelete = (id) => {
+    const handleRemove = (id) => {
         dispatch(cartDelete(id))
     }
 
@@ -112,7 +112,8 @@ function Cart(props) {
                                                 </div>
                                             </td>
                                             <td className="cart__price">${c.price}</td>
-                                            <td className="cart__close"><div onClick={() => handleDelete(c.id)}><i className="fa fa-close" /></div></td>
+                                            <td className="cart__price">${productTotal(c.price, c.quantity)}</td>
+                                            <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
                                         </tr>
                                         {/* <tr>
                                             <td className="product__cart__item">
@@ -212,9 +213,9 @@ function Cart(props) {
                                 <h6>Cart total</h6>
                                 <ul>
                                     <li>Subtotal <span>$ 169.50</span></li>
-                                    <li>Total <span>$ 169.50</span></li>
+                                    <li>Total<span>$ 169.50</span></li>
                                 </ul>
-                                <a href="#" className="primary-btn">Proceed to checkout</a>
+                                <NavLink  to={"/checkout"}className="primary-btn">Proceed to checkout</NavLink>
                             </div>
                         </div>
                     </div>
