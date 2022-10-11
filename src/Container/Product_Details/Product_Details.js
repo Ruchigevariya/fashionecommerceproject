@@ -38,8 +38,8 @@ function Product_Details(props) {
                                 fData.map((p) => {
                                     return (
                                         <>
-                                            <div className='col-md-4'>
-                                                <div className="product__item  mt-5">
+                                            <div className='col-md-4 mt-5 d-flex align-items-center justify-content-center'>
+                                                <div className="product__item mt-5">
                                                     <div className="product__details__pic__set-bg">
                                                         <img src={p.product_img} alt />
                                                         <div className='product__item__text'>
@@ -97,16 +97,6 @@ function Product_Details(props) {
                                                                                 reasonable now that the newness is wearing off. For approximately
                                                                                 $350.00, a new Pocket PC can now be purchased.</p>
                                                                         </div>
-                                                                        <div className="product__details__tab__content__item">
-                                                                            <h5>Material used</h5>
-                                                                            <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                                                                from synthetic materials, not natural like wool. Polyester suits become
-                                                                                creased easily and are known for not being breathable. Polyester suits
-                                                                                tend to have a shine to them compared to wool and cotton suits, this can
-                                                                                make the suit look cheap. The texture of velvet is luxurious and
-                                                                                breathable. Velvet is a great choice for dinner party jacket and can be
-                                                                                worn all year round.</p>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                 <div className="tab-pane" id="tabs-6" role="tabpanel">
@@ -150,16 +140,6 @@ function Product_Details(props) {
                                                                                 These days, customers are finding that prices have become much more
                                                                                 reasonable now that the newness is wearing off. For approximately
                                                                                 $350.00, a new Pocket PC can now be purchased.</p>
-                                                                        </div>
-                                                                        <div className="product__details__tab__content__item">
-                                                                            <h5>Material used</h5>
-                                                                            <p>Polyester is deemed lower quality due to its none natural quality’s. Made
-                                                                                from synthetic materials, not natural like wool. Polyester suits become
-                                                                                creased easily and are known for not being breathable. Polyester suits
-                                                                                tend to have a shine to them compared to wool and cotton suits, this can
-                                                                                make the suit look cheap. The texture of velvet is luxurious and
-                                                                                breathable. Velvet is a great choice for dinner party jacket and can be
-                                                                                worn all year round.</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>

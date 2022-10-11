@@ -38,14 +38,14 @@ function Cart(props) {
         dispatch(cartDelete(id))
     }
 
-    const handleDecrement = (id) => {
-        console.log(id);
-        dispatch(cartDecrement(id))
-    }
-
     const handleIncrement = (id) => {
         console.log(id);
         dispatch(cartIncrement(id))
+    }
+
+    const handleDecrement = (id) => {
+        console.log(id);
+        dispatch(cartDecrement(id))
     }
 
     let pTotal = 0
@@ -105,14 +105,14 @@ function Cart(props) {
                                             <td className="quantity__item">
                                                 <div className="quantity">
                                                     <div className="pro-qty-2">
-                                                        <button onClick={() => handleDecrement(c.id)}>+</button>
+                                                        <button onClick={() => handleIncrement(c.id)}>+</button>
                                                         <span>{c.quantity}</span>
-                                                        <button onClick={() => handleIncrement(c.id)}>-</button>
+                                                        <button onClick={() => handleDecrement(c.id)}>-</button>
                                                     </div>
                                                 </div>
                                             </td>
                                             <td className="cart__price">${c.price}</td>
-                                            <td className="cart__price">${productTotal(c.price, c.quantity)}</td>
+                                            <td className="product_total">${productTotal(c.price, c.quantity)}</td>
                                             <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
                                         </tr>
                                         {/* <tr>
@@ -212,8 +212,8 @@ function Cart(props) {
                             <div className="cart__total">
                                 <h6>Cart total</h6>
                                 <ul>
-                                    <li>Subtotal <span>$ 169.50</span></li>
-                                    <li>Total<span>$ 169.50</span></li>
+                                    <li>Subtotal<span>{pTotal}</span></li>
+                                    <li>Total<span>{pTotal}</span></li>
                                 </ul>
                                 <NavLink  to={"/checkout"}className="primary-btn">Proceed to checkout</NavLink>
                             </div>

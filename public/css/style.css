@@ -1623,10 +1623,10 @@ ol {
 	margin-top: -28px;
 	margin-left: -28px;
 }
-.product__details__pic__set-bg img{
+/* .product__details__pic__set-bg img{
 	display: block;
 	width:100%
-}
+} */
 .product__details__text {
 	text-align: center;
 }
