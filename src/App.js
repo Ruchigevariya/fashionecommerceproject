@@ -21,10 +21,6 @@ import { persistor, store } from './redux/Store';
 import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/integration/react'
 import Cart from './Container/Cart/Cart';
-import Men from './Container/Categories_list/Men';
-import Women from './Container/Categories_list/Women';
-import Kids from './Container/Categories_list/Kids';
-import Accessories from './Container/Categories_list/Accessories';
 import Layout from '../src/Admin/Components/Layout/Layout';
 import Product from '../src/Admin/Container/Product/Product';
 import Counter from '../src/Admin/Container/Counter/Counter';
