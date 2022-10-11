@@ -1,3 +1,4 @@
+import { logDOM } from '@testing-library/react';
 import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -24,6 +25,7 @@ function View_Product(props) {
 
     const handleCart = (id) => {
         dispatch(addtoCart(id))
+        console.log(id);
     }
 
     return (

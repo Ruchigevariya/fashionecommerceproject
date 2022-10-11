@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
@@ -12,20 +12,10 @@ function Cart(props) {
 
     const dispatch = useDispatch()
 
-    // const [counter, setCounter] = useState(1);
-
-    // const incrememt = () => {
-    //     setCounter(counter + 1)
-    // }
-
-    // const decrement = () => {
-    //     setCounter(counter - 1)
-    // }
-
     const cart = useSelector(state => state.cart)
     console.log(cart.cart);
 
-    const cartData = [];
+    const cartData = []
 
     product.Product.map((p) => {
         cart.cart.map((c) => {
@@ -89,102 +79,35 @@ function Cart(props) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    {
-                                        cartData.map((c , i) => (
-                                            <>
-                                            <tr>
-                                            <td className="product__cart__item">
-                                                <div className="product__cart__item__pic">
-                                                    <img src={c.product_img} alt />
-                                                </div>
-                                                <div className="product__cart__item__text">
-                                                    <h6>{c.name}</h6>
-                                                    <h5>${c.price}</h5>
-                                                </div>
-                                            </td>
-                                            <td className="quantity__item">
-                                                <div className="quantity">
-                                                    <div className="pro-qty-2">
-                                                        <button onClick={() => handleIncrement(c.id)}>+</button>
-                                                        <span>{c.quantity}</span>
-                                                        <button onClick={() => handleDecrement(c.id)}>-</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="cart__price">${c.price}</td>
-                                            <td className="product_total">${productTotal(c.price, c.quantity)}</td>
-                                            <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
-                                        </tr>
-                                        {/* <tr>
-                                            <td className="product__cart__item">
-                                                <div className="product__cart__item__pic">
-                                                    <img src="img/shopping-cart/cart-2.jpg" alt />
-                                                </div>
-                                                <div className="product__cart__item__text">
-                                                    <h6>Diagonal Textured Cap</h6>
-                                                    <h5>$98.49</h5>
-                                                </div>
-                                            </td>
-                                            <td className="quantity__item">
-                                                <div className="quantity">
-                                                    <div className="pro-qty-2">
-                                                        <button onClick={() => incrememt()}>+</button>
-                                                        {counter}
-                                                        <button onClick={() => decrement()}>-</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="cart__price">$ 32.50</td>
-                                            <td className="cart__close"><i className="fa fa-close" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td className="product__cart__item">
-                                                <div className="product__cart__item__pic">
-                                                    <img src="img/shopping-cart/cart-3.jpg" alt />
-                                                </div>
-                                                <div className="product__cart__item__text">
-                                                    <h6>Basic Flowing Scarf</h6>
-                                                    <h5>$98.49</h5>
-                                                </div>
-                                            </td>
-                                            <td className="quantity__item">
-                                                <div className="quantity">
-                                                    <div className="pro-qty-2">
-                                                        <button onClick={() => incrememt()}>+</button>
-                                                        {counter}
-                                                        <button onClick={() => decrement()}>-</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="cart__price">$ 47.00</td>
-                                            <td className="cart__close"><i className="fa fa-close" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td className="product__cart__item">
-                                                <div className="product__cart__item__pic">
-                                                    <img src="img/shopping-cart/cart-4.jpg" alt />
-                                                </div>
-                                                <div className="product__cart__item__text">
-                                                    <h6>Basic Flowing Scarf</h6>
-                                                    <h5>$98.49</h5>
-                                                </div>
-                                            </td>
-                                            <td className="quantity__item">
-                                                <div className="quantity">
-                                                    <div className="pro-qty-2">
-                                                        <button onClick={() => incrememt()}>+</button>
-                                                        {counter}
-                                                        <button onClick={() => decrement()}>-</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td className="cart__price">$ 30.00</td>
-                                            <td className="cart__close"><i className="fa fa-close" /></td>
-                                        </tr> */}
-                                            </>
-                                        ))
-                                    }
-                                        
+                                        {
+                                            cartData.map((c, i) => (
+                                                <>
+                                                    <tr key={i}>
+                                                        <td className="product__cart__item">
+                                                            <div className="product__cart__item__pic">
+                                                                <img src={c.product_img} alt />
+                                                            </div>
+                                                            <div className="product__cart__item__text">
+                                                                <h6>{c.name}</h6>
+                                                                <h5>${c.price}</h5>
+                                                            </div>
+                                                        </td>
+                                                        <td className="quantity__item">
+                                                            <div className="quantity">
+                                                                <div className="pro-qty-2">
+                                                                    <button onClick={() => handleIncrement(c.id)}>+</button>
+                                                                    <span>{c.quantity}</span>
+                                                                    <button onClick={() => handleDecrement(c.id)}>-</button>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td className="cart__price">${c.price}</td>
+                                                        <td className="product_total">${productTotal(c.price, c.quantity)}</td>
+                                                        <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
+                                                    </tr>
+                                                </>
+                                            ))
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -215,7 +138,7 @@ function Cart(props) {
                                     <li>Subtotal<span>{pTotal}</span></li>
                                     <li>Total<span>{pTotal}</span></li>
                                 </ul>
-                                <NavLink  to={"/checkout"}className="primary-btn">Proceed to checkout</NavLink>
+                                <NavLink to={"/checkout"} className="primary-btn">Proceed to checkout</NavLink>
                             </div>
                         </div>
                     </div>

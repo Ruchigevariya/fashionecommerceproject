@@ -1,4 +1,4 @@
-import * as ActionTypes from '../ActionTypes'
+import * as ActionTypes from '../ActionTypes';
 
 export const addtoCart = (data) => (dispatch) => {
     console.log("addtoCart", { id: data, quantity: 1 });
