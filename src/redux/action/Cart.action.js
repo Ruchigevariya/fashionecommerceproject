@@ -10,12 +10,12 @@ export const cartDelete = (data) => (dispatch) => {
     dispatch({ type: ActionTypes.DELETE_CART, payload: data })
 }
 
-export const cartDecrement = (data) => (dispatch) => {
-    console.log("cartDecrement", data);
-    dispatch({ type: ActionTypes.CART_DECREMENT, payload: data })
-}
-
 export const cartIncrement = (data) => (dispatch) => {
     console.log("cartIncrement", data);
     dispatch({ type: ActionTypes.CART_INCREMENT, payload: data })
+}
+
+export const cartDecrement = (data) => (dispatch) => {
+    console.log("cartDecrement", data);
+    dispatch({ type: ActionTypes.CART_DECREMENT, payload: data })
 }

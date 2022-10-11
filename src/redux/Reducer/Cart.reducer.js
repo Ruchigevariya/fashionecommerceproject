@@ -40,22 +40,6 @@ export const cartReducer = (state = initVal, action) => {
                 ...state,
                 cart: state.cart.filter((c) => c.id !== action.payload),
             }
-        case ActionTypes.CART_DECREMENT:
-            state.countCart--
-            return {
-                ...state,
-                cart: state.cart.map((c) => {
-                    if (c.id === action.payload) {
-                        return {
-                            id: c.id,
-                            quantity: c.quantity - 1
-                        }
-                    } else {
-                        return c;
-                    }
-                }).filter((c) => c.quantity != 0)
-            }
-
         case ActionTypes.CART_INCREMENT:
             state.countCart++
             return {
@@ -71,6 +55,21 @@ export const cartReducer = (state = initVal, action) => {
                     }
                 }).filter((c) => c.quantity != 0)
             }
+            case ActionTypes.CART_DECREMENT:
+                state.countCart--
+                return {
+                    ...state,
+                    cart: state.cart.map((c) => {
+                        if (c.id === action.payload) {
+                            return {
+                                id: c.id,
+                                quantity: c.quantity - 1
+                            }
+                        } else {
+                            return c;
+                        }
+                    }).filter((c) => c.quantity != 0)
+                }
         default:
             return state;
     }
