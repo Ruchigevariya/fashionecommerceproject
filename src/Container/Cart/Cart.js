@@ -25,7 +25,8 @@ function Cart(props) {
     const cart = useSelector(state => state.cart)
     console.log(cart.cart);
 
-    const cartData = []
+    const cartData = [];
+
     product.Product.map((p) => {
         cart.cart.map((c) => {
             if (p.id === c.id) {
@@ -53,7 +54,6 @@ function Cart(props) {
         pTotal = pTotal + Number(price * quantity)
         return Number(price * quantity).toLocaleString()
     }
-
 
     return (
         <div>
