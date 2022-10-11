@@ -32,6 +32,8 @@ export const cartReducer = (state = initVal, action) => {
             }
             return {
                 ...state,
+                // cart: state.cart.concat(action.payload),
+
             }
         case ActionTypes.DELETE_CART:
             return {
@@ -53,21 +55,21 @@ export const cartReducer = (state = initVal, action) => {
                     }
                 }).filter((c) => c.quantity != 0)
             }
-            case ActionTypes.CART_DECREMENT:
-                state.countCart--
-                return {
-                    ...state,
-                    cart: state.cart.map((c) => {
-                        if (c.id === action.payload) {
-                            return {
-                                id: c.id,
-                                quantity: c.quantity - 1
-                            }
-                        } else {
-                            return c;
+        case ActionTypes.CART_DECREMENT:
+            state.countCart--
+            return {
+                ...state,
+                cart: state.cart.map((c) => {
+                    if (c.id === action.payload) {
+                        return {
+                            id: c.id,
+                            quantity: c.quantity - 1
                         }
-                    }).filter((c) => c.quantity != 0)
-                }
+                    } else {
+                        return c;
+                    }
+                }).filter((c) => c.quantity != 0)
+            }
         default:
             return state;
     }

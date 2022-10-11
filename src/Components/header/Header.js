@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../Context/ThemeContext';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOutAction } from '../../redux/action/auth.action';
 import Alert from '../Alert/Alert';
+import { Badge } from '@mui/material';
 
 function Header(props) {
     const value = useContext(themeContext);
@@ -12,6 +13,14 @@ function Header(props) {
     const dispatch = useDispatch()
 
     const auth = useSelector(state => state.auth)
+
+    const cart = useSelector(state => state.cart)
+
+    let sum = 0
+
+    cart.cart.map((s) => {
+        sum = sum + s.quantity
+    })
 
     return (
         <div>
@@ -32,10 +41,10 @@ function Header(props) {
                                             auth.user === null ?
                                                 <NavLink to={"/login"}>Login</NavLink>
                                                 :
-                                                <NavLink to={"/login"} onClick={() => {dispatch(logOutAction())}}>Logout</NavLink>
+                                                <NavLink to={"/login"} onClick={() => { dispatch(logOutAction()) }}>Logout</NavLink>
                                         }
                                         <a href="#">FAQs</a>
-                                        <Alert/>
+                                        <Alert />
                                     </div>
 
                                     <div className="header__top__hover">
@@ -97,7 +106,14 @@ function Header(props) {
                                 <NavLink className="search-switch" to={"/search"}><img src="img/icon/search.png" alt /></NavLink>
                                 <a href="#"><img src="img/icon/heart.png" alt /></a>
                                 <NavLink to={"/cart"}><img src="img/icon/cart.png" alt /> <span>0</span></NavLink>
-                                <div className="price">$0.00</div>
+                                {
+                                    auth.user === null ?
+                                        ''
+                                        :
+                                        <Badge badgeContent={sum} color="primary"> </Badge>
+                                }
+                                {/* <div className="price">$0.00</div> */}
+                                
                             </div>
                         </div>
                     </div>

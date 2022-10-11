@@ -21,6 +21,7 @@ function Cart(props) {
         cart.cart.map((c) => {
             if (p.id === c.id) {
                 cartData.push({ ...p, quantity: c.quantity })
+                console.log(cartData);
             }
         })
     })
