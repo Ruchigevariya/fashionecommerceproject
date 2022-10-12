@@ -32,12 +32,12 @@ export const cartReducer = (state = initVal, action) => {
             }
             return {
                 ...state,
-                cart: state.cart.concat(action.payload)
+                cart: state.cart.concat(action.payload),
             }
         case ActionTypes.DELETE_CART:
             return {
                 ...state,
-                cart: state.cart.filter((c) => c.id !== action.payload)
+                cart: state.cart.filter((c) => c.id !== action.payload),
             }
         case ActionTypes.CART_INCREMENT:
             state.countCart++
