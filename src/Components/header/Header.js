@@ -110,7 +110,7 @@ function Header(props) {
                                     auth.user === null ?
                                         ''
                                         :
-                                        <Badge badgeContent={sum} color="primary"> </Badge>
+                                        <Badge badgeContent={sum} color="secondary"> </Badge>
                                 }
                                 {/* <div className="price">$0.00</div> */}
                                 

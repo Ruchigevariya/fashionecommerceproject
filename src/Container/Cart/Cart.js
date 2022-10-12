@@ -84,7 +84,7 @@ function Cart(props) {
                                         {
                                             cartData.map((c, i) => (
                                                 <>
-                                                    <tr key={i}>
+                                                    <tr className="table-body-row" key={i}>
                                                         <td className="product__cart__item">
                                                             <div className="product__cart__item__pic">
                                                                 <img src={c.product_img} alt />
@@ -103,8 +103,8 @@ function Cart(props) {
                                                                 </div>
                                                             </div>
                                                         </td>
-                                                        <td className="cart__price">${c.price}</td>
-                                                        <td className="product_total">${productTotal(c.price, c.quantity)}</td>
+                                                        {/* <td className="cart__price">${c.price}</td> */}
+                                                        <td className="product_total">${productTotal(c.price , c.quantity)}</td>
                                                         <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
                                                     </tr>
                                                 </>
