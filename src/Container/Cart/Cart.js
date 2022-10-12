@@ -41,6 +41,7 @@ function Cart(props) {
     }
 
     let pTotal = 0
+
     function productTotal(price, quantity) {
         pTotal = pTotal + Number(price * quantity)
         return Number(price * quantity).toLocaleString()
