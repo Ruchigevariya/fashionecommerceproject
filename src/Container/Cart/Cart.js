@@ -40,13 +40,16 @@ function Cart(props) {
         dispatch(cartDecrement(id))
     }
 
-    let pTotal = 0
+    let subTotal = 0
 
-    function productTotal(price, quantity) {
-        pTotal = pTotal + Number(price * quantity)
-        return Number(price * quantity).toLocaleString()
+    function productTotals(price, quantity) {
+        subTotal = subTotal + Number(price * quantity)
+        console.log("productTotals");
+        return Number(price * quantity);
+
     }
 
+    
     return (
         <div>
             <section className="breadcrumb-option">
@@ -104,7 +107,7 @@ function Cart(props) {
                                                             </div>
                                                         </td>
                                                         {/* <td className="cart__price">${c.price}</td> */}
-                                                        <td className="product_total">${productTotal(c.price , c.quantity)}</td>
+                                                        <td className="product_total">${productTotals(c.price , c.quantity)}</td>
                                                         <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
                                                     </tr>
                                                 </>
@@ -137,8 +140,8 @@ function Cart(props) {
                             <div className="cart__total">
                                 <h6>Cart total</h6>
                                 <ul>
-                                    <li>Subtotal<span>{pTotal}</span></li>
-                                    <li>Total<span>{pTotal}</span></li>
+                                    <li>Subtotal<span>${subTotal}</span></li>
+                                    <li>Total<span>${subTotal}</span></li>
                                 </ul>
                                 <NavLink to={"/checkout"} className="primary-btn">Proceed to checkout</NavLink>
                             </div>
