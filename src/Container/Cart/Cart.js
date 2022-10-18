@@ -44,12 +44,9 @@ function Cart(props) {
 
     function productTotals(price, quantity) {
         subTotal = subTotal + Number(price * quantity)
-        console.log("productTotals");
-        return Number(price * quantity);
-
+        return Number(price * quantity).toLocaleString()
     }
 
-    
     return (
         <div>
             <section className="breadcrumb-option">
