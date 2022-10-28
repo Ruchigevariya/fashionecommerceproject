@@ -9,7 +9,7 @@ function Cart(props) {
     console.log(value);
 
     const product = useSelector(state => state.Product)
-
+    console.log(product.Product);
     const dispatch = useDispatch()
 
     const cart = useSelector(state => state.cart)
@@ -21,11 +21,10 @@ function Cart(props) {
         cart.cart.map((c) => {
             if (p.id === c.id) {
                 cartData.push({ ...p, quantity: c.quantity })
-                console.log(cartData);
             }
         })
     })
-
+console.log(cartData);
     const handleRemove = (id) => {
         dispatch(cartDelete(id))
     }
@@ -41,7 +40,6 @@ function Cart(props) {
     }
 
     let subTotal = 0
-
     function productTotals(price, quantity) {
         subTotal = subTotal + Number(price * quantity)
         return Number(price * quantity).toLocaleString()

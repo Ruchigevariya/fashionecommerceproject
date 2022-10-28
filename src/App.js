@@ -27,6 +27,8 @@ import Counter from '../src/Admin/Container/Counter/Counter';
 import Category from '../src/Admin/Container/Category/Category';
 import Product_Details from './Container/Product_Details/Product_Details';
 import ProductWise from './Container/Categories_list/ProductWise/ProductWise';
+import OrderData from './Admin/Container/Order/OrderData';
+import Order from './Container/Order/Order';
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
               <PrivateRoute path={"/cart"} exact component={Cart} />
               <PublicRoute path={"/product_details"} exact component={Product_Details} />
               <PublicRoute path={"/allproduct"} exact component={ProductWise} />
+              <PublicRoute path={"/order"} exact component={Order}/>
 
 
                  // Admin path
@@ -56,6 +59,7 @@ function App() {
                 <Route path={"/product"} exact component={Product} />
                 <Route path={"/counter"} exact component={Counter} />
                 <Route path={"/category"} exact component={Category} />
+                <Route path={'/orderData'} exact component={OrderData}></Route>
               </Layout>
 
             </Switch>

@@ -18,6 +18,7 @@ export const ADD_CART = "ADD_CART"
 export const DELETE_CART = "DELETE_CART"
 export const CART_INCREMENT = "CART_INCREMENT"
 export const CART_DECREMENT = "CART_DECREMENT"
+export const CART_EMPTY = "CART_EMPTY"
 
 // admin ActionTypes
 
@@ -38,4 +39,7 @@ export const DELETE_CATEGORYDATA = 'DELETE_CATEGORYDATA'
 export const UPDATE_CATEGORYDATA = 'UPDATE_CATEGORYDATA'
 
 export const ERROR_CATEGORY = 'ERROR_CATEGORY'
+
+export const GET_ORDER_DATA = "GET_ORDER_DATA"
+export const ADD_ORDER_DATA = "GET_ORDER_DATA"
 

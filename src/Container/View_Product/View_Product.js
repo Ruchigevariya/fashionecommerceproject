@@ -54,7 +54,7 @@ function View_Product(props) {
                                         </div>
                                         <div className="product__item__text">
                                             <h6>{p.name}</h6>
-                                            <NavLink to={"/cart"} onClick={() => handleCart(p.id)}><img src="img/icon/cart.png" alt /> <span>0</span>+ Add To Cart</NavLink>
+                                            <NavLink to={"/shop"} onClick={() => handleCart(p.id)}><img src="img/icon/cart.png" alt /> <span>0</span>+ Add To Cart</NavLink>
                                             <div className="rating">
                                                 <i className="fa fa-star-o" />
                                                 <i className="fa fa-star-o" />

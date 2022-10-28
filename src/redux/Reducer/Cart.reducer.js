@@ -32,7 +32,7 @@ export const cartReducer = (state = initVal, action) => {
             }
             return {
                 ...state,
-                cart: state.cart.concat(action.payload),
+                // cart: state.cart.concat(action.payload),
             }
         case ActionTypes.DELETE_CART:
             return {
@@ -69,6 +69,12 @@ export const cartReducer = (state = initVal, action) => {
                     }
                 }).filter((c) => c.quantity != 0)
             }
+            case ActionTypes.CART_EMPTY:
+
+                return {
+                    ...state,
+                    cart: []
+                }
         default:
             return state;
     }
