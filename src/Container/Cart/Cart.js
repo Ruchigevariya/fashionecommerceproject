@@ -10,6 +10,7 @@ function Cart(props) {
 
     const product = useSelector(state => state.Product)
     console.log(product.Product);
+
     const dispatch = useDispatch()
 
     const cart = useSelector(state => state.cart)
@@ -24,7 +25,8 @@ function Cart(props) {
             }
         })
     })
-console.log(cartData);
+    console.log(cartData);
+
     const handleRemove = (id) => {
         dispatch(cartDelete(id))
     }
@@ -39,12 +41,17 @@ console.log(cartData);
         dispatch(cartDecrement(id))
     }
 
-    let subTotal = 0
+    let subTotals = 0
     function productTotals(price, quantity) {
-        subTotal = subTotal + Number(price * quantity)
+        subTotals = subTotals + Number(price * quantity)
+        console.log("productTotals");
+
         return Number(price * quantity).toLocaleString()
+
     }
 
+    console.log(subTotals);
+    
     return (
         <div>
             <section className="breadcrumb-option">
@@ -89,7 +96,7 @@ console.log(cartData);
                                                             </div>
                                                             <div className="product__cart__item__text">
                                                                 <h6>{c.name}</h6>
-                                                                <h5>${c.price}</h5>
+                                                                <h5>{c.price}</h5>
                                                             </div>
                                                         </td>
                                                         <td className="quantity__item">
@@ -102,7 +109,7 @@ console.log(cartData);
                                                             </div>
                                                         </td>
                                                         {/* <td className="cart__price">${c.price}</td> */}
-                                                        <td className="product_total">${productTotals(c.price , c.quantity)}</td>
+                                                        <td className="product_total">${productTotals(c.price, c.quantity)}</td>
                                                         <td className="cart__close"><div onClick={() => handleRemove(c.id)}><i className="fa fa-close" /></div></td>
                                                     </tr>
                                                 </>
@@ -135,8 +142,8 @@ console.log(cartData);
                             <div className="cart__total">
                                 <h6>Cart total</h6>
                                 <ul>
-                                    <li>Subtotal<span>${subTotal}</span></li>
-                                    <li>Total<span>${subTotal}</span></li>
+                                    <li>Subtotal<span>${subTotals}</span></li>
+                                    <li>Total<span>${subTotals}</span></li>
                                 </ul>
                                 <NavLink to={"/checkout"} className="primary-btn">Proceed to checkout</NavLink>
                             </div>
