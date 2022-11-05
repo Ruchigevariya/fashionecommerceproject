@@ -71,7 +71,7 @@ function Cart(props) {
                 </div>
             </section>
 
-            <section className="shopping-cart spad">
+            <section className={`shopping-cart spad ${value.theme}`}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8">

@@ -4260,3 +4260,7 @@ p {
 	width:95px;
 	height: 95px;
 }
+
+.dark .continue__btn a{
+	color: #ffff;
+} 
